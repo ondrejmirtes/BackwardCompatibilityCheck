@@ -150,7 +150,8 @@ use function file_exists;
                                                     new FunctionBased\SkipFunctionBasedErrors(new FunctionBased\ReturnTypeCovarianceChanged(new TypeIsCovariant())),
                                                     new FunctionBased\SkipFunctionBasedErrors(new FunctionBased\ReturnTypeChanged()),
                                                     new FunctionBased\SkipFunctionBasedErrors(new FunctionBased\ParameterTypeContravarianceChanged(new TypeIsContravariant())),
-                                                    new FunctionBased\SkipFunctionBasedErrors(new FunctionBased\ParameterTypeChanged())
+                                                    new FunctionBased\SkipFunctionBasedErrors(new FunctionBased\ParameterTypeChanged()),
+                                                    new FunctionBased\SkipFunctionBasedErrors(new FunctionBased\ParameterNameChanged())
                                                 )
                                             ))
                                         )
@@ -171,7 +172,8 @@ use function file_exists;
                                                     new FunctionBased\SkipFunctionBasedErrors(new FunctionBased\ReturnTypeCovarianceChanged(new TypeIsCovariant())),
                                                     new FunctionBased\SkipFunctionBasedErrors(new FunctionBased\ReturnTypeChanged()),
                                                     new FunctionBased\SkipFunctionBasedErrors(new FunctionBased\ParameterTypeContravarianceChanged(new TypeIsContravariant())),
-                                                    new FunctionBased\SkipFunctionBasedErrors(new FunctionBased\ParameterTypeChanged())
+                                                    new FunctionBased\SkipFunctionBasedErrors(new FunctionBased\ParameterTypeChanged()),
+                                                    new FunctionBased\SkipFunctionBasedErrors(new FunctionBased\ParameterNameChanged())
                                                 )
                                             ))
                                         )
@@ -252,7 +254,8 @@ use function file_exists;
                                         new FunctionBased\SkipFunctionBasedErrors(new FunctionBased\ReturnTypeCovarianceChanged(new TypeIsCovariant())),
                                         new FunctionBased\SkipFunctionBasedErrors(new FunctionBased\ReturnTypeChanged()),
                                         new FunctionBased\SkipFunctionBasedErrors(new FunctionBased\ParameterTypeContravarianceChanged(new TypeIsContravariant())),
-                                        new FunctionBased\SkipFunctionBasedErrors(new FunctionBased\ParameterTypeChanged())
+                                        new FunctionBased\SkipFunctionBasedErrors(new FunctionBased\ParameterTypeChanged()),
+                                        new FunctionBased\SkipFunctionBasedErrors(new FunctionBased\ParameterNameChanged())
                                     )
                                 ))
                             )
@@ -295,7 +298,8 @@ use function file_exists;
                                             new FunctionBased\SkipFunctionBasedErrors(new FunctionBased\ReturnTypeCovarianceChanged(new TypeIsCovariant())),
                                             new FunctionBased\SkipFunctionBasedErrors(new FunctionBased\ReturnTypeChanged()),
                                             new FunctionBased\SkipFunctionBasedErrors(new FunctionBased\ParameterTypeContravarianceChanged(new TypeIsContravariant())),
-                                            new FunctionBased\SkipFunctionBasedErrors(new FunctionBased\ParameterTypeChanged())
+                                            new FunctionBased\SkipFunctionBasedErrors(new FunctionBased\ParameterTypeChanged()),
+                                            new FunctionBased\SkipFunctionBasedErrors(new FunctionBased\ParameterNameChanged())
                                         )
                                     ))
                                 )
