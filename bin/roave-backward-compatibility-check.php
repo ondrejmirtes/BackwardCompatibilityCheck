@@ -28,7 +28,6 @@ use Roave\BackwardCompatibility\Git\GitParseRevision;
 use Roave\BackwardCompatibility\Git\PickLastMinorVersionFromCollection;
 use Roave\BackwardCompatibility\LocateDependencies\LocateDependenciesViaComposer;
 use Roave\BackwardCompatibility\LocateSources\LocateSourcesViaComposerJson;
-use Roave\BetterReflection\BetterReflection;
 use RuntimeException;
 use Symfony\Component\Console\Application;
 use Symfony\Component\Console\Input\ArgvInput;
@@ -119,7 +118,6 @@ use function file_exists;
                                     new PropertyBased\SkipPropertyBasedErrors(new PropertyBased\OnlyPublicPropertyChanged(
                                         new PropertyBased\MultipleChecksOnAProperty(
                                             new PropertyBased\SkipPropertyBasedErrors(new PropertyBased\PropertyBecameInternal()),
-                                            new PropertyBased\SkipPropertyBasedErrors(new PropertyBased\PropertyTypeChanged(new TypeIsContravariant(), new TypeIsCovariant())),
                                             new PropertyBased\SkipPropertyBasedErrors(new PropertyBased\PropertyDefaultValueChanged()),
                                             new PropertyBased\SkipPropertyBasedErrors(new PropertyBased\PropertyVisibilityReduced()),
                                             new PropertyBased\SkipPropertyBasedErrors(new PropertyBased\PropertyScopeChanged()),
@@ -128,7 +126,6 @@ use function file_exists;
                                     new PropertyBased\SkipPropertyBasedErrors(new PropertyBased\OnlyProtectedPropertyChanged(
                                         new PropertyBased\MultipleChecksOnAProperty(
                                             new PropertyBased\SkipPropertyBasedErrors(new PropertyBased\PropertyBecameInternal()),
-                                            new PropertyBased\SkipPropertyBasedErrors(new PropertyBased\PropertyTypeChanged(new TypeIsContravariant(), new TypeIsCovariant())),
                                             new PropertyBased\SkipPropertyBasedErrors(new PropertyBased\PropertyDefaultValueChanged()),
                                             new PropertyBased\SkipPropertyBasedErrors(new PropertyBased\PropertyVisibilityReduced()),
                                             new PropertyBased\SkipPropertyBasedErrors(new PropertyBased\PropertyScopeChanged()),
@@ -200,7 +197,6 @@ use function file_exists;
                                 new PropertyBased\SkipPropertyBasedErrors(new PropertyBased\OnlyPublicPropertyChanged(
                                     new PropertyBased\MultipleChecksOnAProperty(
                                         new PropertyBased\SkipPropertyBasedErrors(new PropertyBased\PropertyBecameInternal()),
-                                        new PropertyBased\SkipPropertyBasedErrors(new PropertyBased\PropertyTypeChanged(new TypeIsContravariant(), new TypeIsCovariant())),
                                         new PropertyBased\SkipPropertyBasedErrors(new PropertyBased\PropertyDefaultValueChanged()),
                                         new PropertyBased\SkipPropertyBasedErrors(new PropertyBased\PropertyVisibilityReduced()),
                                         new PropertyBased\SkipPropertyBasedErrors(new PropertyBased\PropertyScopeChanged()),
@@ -279,7 +275,6 @@ use function file_exists;
                         new ClassBased\SkipClassBasedErrors(new ClassBased\PropertyChanged(
                             new PropertyBased\MultipleChecksOnAProperty(
                                 new PropertyBased\SkipPropertyBasedErrors(new PropertyBased\PropertyBecameInternal()),
-                                new PropertyBased\SkipPropertyBasedErrors(new PropertyBased\PropertyTypeChanged(new TypeIsContravariant(), new TypeIsCovariant())),
                                 new PropertyBased\SkipPropertyBasedErrors(new PropertyBased\PropertyDefaultValueChanged()),
                                 new PropertyBased\SkipPropertyBasedErrors(new PropertyBased\PropertyVisibilityReduced()),
                                 new PropertyBased\SkipPropertyBasedErrors(new PropertyBased\PropertyScopeChanged()),
