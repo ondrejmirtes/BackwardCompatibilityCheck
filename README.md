@@ -1,14 +1,13 @@
 # Roave Backward Compatibility Check
 
-[![SWUbanner](https://raw.githubusercontent.com/vshymanskyy/StandWithUkraine/main/banner2-direct.svg)](https://github.com/vshymanskyy/StandWithUkraine/blob/main/docs/README.md)
-
-[![Mutation testing badge](https://img.shields.io/endpoint?style=flat&url=https%3A%2F%2Fbadge-api.stryker-mutator.io%2Fgithub.com%2FRoave%2FBackwardCompatibilityCheck%2F7.1.x)](https://dashboard.stryker-mutator.io/reports/github.com/Roave/BackwardCompatibilityCheck/7.1.x)
-[![Type Coverage](https://shepherd.dev/github/Roave/BackwardCompatibilityCheck/coverage.svg)](https://shepherd.dev/github/Roave/BackwardCompatibilityCheck)
-[![Latest Stable Version](https://poser.pugx.org/roave/backward-compatibility-check/v/stable)](https://packagist.org/packages/roave/backward-compatibility-check)
-[![License](https://poser.pugx.org/roave/backward-compatibility-check/license)](https://packagist.org/packages/roave/backward-compatibility-check)
+[![Mutation testing badge](https://img.shields.io/endpoint?style=flat&url=https%3A%2F%2Fbadge-api.stryker-mutator.io%2Fgithub.com%2Fondrejmirtes%2FBackwardCompatibilityCheck%2Fmaster)](https://dashboard.stryker-mutator.io/reports/github.com/ondrejmirtes/BackwardCompatibilityCheck/master)
+[![Latest Stable Version](https://poser.pugx.org/ondrejmirtes/backward-compatibility-check/v/stable)](https://packagist.org/packages/ondrejmirtes/backward-compatibility-check)
+[![License](https://poser.pugx.org/ondrejmirtes/backward-compatibility-check/license)](https://packagist.org/packages/ondrejmirtes/backward-compatibility-check)
 
 A tool that can be used to verify BC breaks between two versions
 of a PHP library.
+
+**This fork changes internal classes and methods interpretation according to [PHPStan backward compatibility promise](https://phpstan.org/developing-extensions/backward-compatibility-promise).**
 
 ## Pre-requisites/assumptions
 
@@ -20,15 +19,7 @@ of a PHP library.
 ## Installation
 
 ```bash
-composer require --dev roave/backward-compatibility-check
-```
-
-### Install with Docker
-
-You can also use Docker to run `roave-backward-compatibility-check`: 
-
-```bash
-docker run --rm -v `pwd`:/app nyholm/roave-bc-check
+composer require --dev ondrejmirtes/backward-compatibility-check
 ```
 
 ## Usage
@@ -71,28 +62,6 @@ jobs:
           run: "composer install"
         - name: "Check for BC breaks"
           run: "vendor/bin/roave-backward-compatibility-check"
-```
-
-#### Nyholm Github Action
-
-Tobias Nyholm also offers [a simple GitHub action](https://github.com/Nyholm/roave-bc-check-docker)
-that you can use in your Github pipeline. We recommend this for most cases as
-it is simple to set up:
-
-_.github/workflows/main.yml_
-```yaml
-on: [push]
-name: Test
-jobs:
-  roave-backwards-compatibility-check:
-    name: Roave Backwards Compatibility Check
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-        with:
-          fetch-depth: 0
-      - name: "Check for BC breaks"
-        uses: docker://nyholm/roave-bc-check-ga
 ```
 
 ### Running manually
