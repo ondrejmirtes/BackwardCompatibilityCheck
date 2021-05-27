@@ -8,7 +8,7 @@
         "composer/composer": "^2.0",
         "nikolaposa/version": "^4.1.0",
         "ocramius/package-versions": "^1.11.0",
-        "roave/better-reflection": "^4.9.0",
+        "ondrejmirtes/better-reflection": "4.3.58",
         "symfony/console": "^5.2.6"
     },
     "license": "MIT",
@@ -24,7 +24,7 @@
     ],
     "require-dev": {
         "doctrine/coding-standard": "^8.2.0",
-        "infection/infection": "^0.16.4",
+        "infection/infection": "^0.23.0",
         "php-standard-library/psalm-plugin": "^1.1",
         "phpunit/phpunit": "^9.5",
         "roave/security-advisories": "dev-master",
@@ -46,5 +46,7 @@
     ],
     "config": {
         "sort-packages": true
-    }
+    },
+	"minimum-stability": "dev",
+	"prefer-stable": true
 }
