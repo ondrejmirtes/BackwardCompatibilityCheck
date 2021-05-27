@@ -1,5 +1,5 @@
 {
-    "name": "roave/backward-compatibility-check",
+    "name": "ondrejmirtes/backward-compatibility-check",
     "description": "Tool to compare two revisions of a public API to check for BC breaks",
     "require": {
         "php": "^7.4.7",
