@@ -9,7 +9,6 @@ use Psl\Str;
 use Roave\BetterReflection\Reflection\ReflectionIntersectionType;
 use Roave\BetterReflection\Reflection\ReflectionNamedType;
 use Roave\BetterReflection\Reflection\ReflectionUnionType;
-use Traversable;
 
 /**
  * This is a simplistic covariant type check. A more appropriate approach would be to
@@ -69,59 +68,6 @@ final class TypeIsCovariant
         $typeAsString         = $type->getName();
         $comparedTypeAsString = $comparedType->getName();
 
-        if (Str\lowercase($typeAsString) === Str\lowercase($comparedTypeAsString)) {
-            return true;
-        }
-
-        if ($typeAsString === 'mixed' || $comparedTypeAsString === 'never') {
-            // everything is covariant to `mixed` or `never`
-            return true;
-        }
-
-        if ($typeAsString === 'void') {
-            // nothing is covariant to `void`
-            return false;
-        }
-
-        if ($typeAsString === 'object' && ! $comparedType->isBuiltin()) {
-            // `object` is not covariant to a defined class type
-            return true;
-        }
-
-        if ($comparedTypeAsString === 'array' && $typeAsString === 'iterable') {
-            // an `array` is a subset of an `iterable`, therefore covariant
-            return true;
-        }
-
-        if ($typeAsString === 'iterable' && ! $comparedType->isBuiltin()) {
-            $comparedTypeReflectionClass = $comparedType->getClass();
-
-            if ($comparedTypeReflectionClass->implementsInterface(Traversable::class)) {
-                // `iterable` can be restricted via any `Iterator` implementation
-                return true;
-            }
-        }
-
-        if ($type->isBuiltin() !== $comparedType->isBuiltin()) {
-            // other known built-in types are never covariant with non-built-in types
-            return false;
-        }
-
-        if ($type->isBuiltin()) {
-            // all other built-in type declarations have no variance/contravariance relationship
-            return false;
-        }
-
-        $originalTypeReflectionClass = $type->getClass();
-        $comparedTypeReflectionClass = $comparedType->getClass();
-
-        if ($originalTypeReflectionClass->isInterface()) {
-            return $comparedTypeReflectionClass->implementsInterface($originalTypeReflectionClass->getName());
-        }
-
-        return Iter\contains(
-            $comparedTypeReflectionClass->getParentClassNames(),
-            $originalTypeReflectionClass->getName(),
-        );
+        return Str\lowercase($typeAsString) === Str\lowercase($comparedTypeAsString);
     }
 }

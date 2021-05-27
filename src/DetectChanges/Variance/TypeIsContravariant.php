@@ -74,40 +74,6 @@ final class TypeIsContravariant
         $typeAsString         = $type->getName();
         $comparedTypeAsString = $comparedType->getName();
 
-        if (Str\lowercase($typeAsString) === Str\lowercase($comparedTypeAsString)) {
-            return true;
-        }
-
-        if ($typeAsString === 'void') {
-            // everything is always contravariant to `void`
-            return true;
-        }
-
-        if ($comparedTypeAsString === 'object' && ! $type->isBuiltin()) {
-            // `object` is always contravariant to any object type
-            return true;
-        }
-
-        if ($comparedTypeAsString === 'iterable' && $typeAsString === 'array') {
-            return true;
-        }
-
-        if ($type->isBuiltin() !== $comparedType->isBuiltin()) {
-            return false;
-        }
-
-        if ($type->isBuiltin()) {
-            // All other type declarations have no variance/contravariance relationship
-            return false;
-        }
-
-        $typeReflectionClass = $type->getClass();
-        $comparedTypeClass   = $comparedType->getClass();
-
-        if ($comparedTypeClass->isInterface()) {
-            return $typeReflectionClass->implementsInterface($comparedTypeClass->getName());
-        }
-
-        return Iter\contains($typeReflectionClass->getParentClassNames(), $comparedTypeClass->getName());
+        return Str\lowercase($typeAsString) === Str\lowercase($comparedTypeAsString);
     }
 }
