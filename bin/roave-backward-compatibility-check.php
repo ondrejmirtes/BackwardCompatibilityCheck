@@ -60,7 +60,7 @@ use const E_DEPRECATED;
         throw new RuntimeException('Could not find Composer autoload.php');
     })();
 
-    $application = new Application('roave/backward-compatibility-check', Versions::getVersion('roave/backward-compatibility-check'));
+    $application = new Application('ondrejmirtes/backward-compatibility-check', Versions::getVersion('ondrejmirtes/backward-compatibility-check'));
     $helperSet   = $application->getHelperSet();
     $input       = new ArgvInput();
     $output      = new ConsoleOutput();
