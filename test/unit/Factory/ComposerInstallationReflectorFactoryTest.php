@@ -4,11 +4,11 @@ declare(strict_types=1);
 
 namespace RoaveTest\BackwardCompatibility\Factory;
 
+use PHPStan\BetterReflection\Reflector\ClassReflector;
+use PHPStan\BetterReflection\SourceLocator\Type\SourceLocator;
 use PHPUnit\Framework\TestCase;
 use Roave\BackwardCompatibility\Factory\ComposerInstallationReflectorFactory;
 use Roave\BackwardCompatibility\LocateSources\LocateSources;
-use Roave\BetterReflection\Reflector\ClassReflector;
-use Roave\BetterReflection\SourceLocator\Type\SourceLocator;
 
 use function uniqid;
 

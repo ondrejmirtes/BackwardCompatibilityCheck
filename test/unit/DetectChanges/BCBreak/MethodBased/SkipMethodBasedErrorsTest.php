@@ -5,13 +5,13 @@ declare(strict_types=1);
 namespace RoaveTest\BackwardCompatibility\DetectChanges\BCBreak\MethodBased;
 
 use Exception;
+use PHPStan\BetterReflection\Reflection\ReflectionMethod;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 use Roave\BackwardCompatibility\Change;
 use Roave\BackwardCompatibility\Changes;
 use Roave\BackwardCompatibility\DetectChanges\BCBreak\MethodBased\MethodBased;
 use Roave\BackwardCompatibility\DetectChanges\BCBreak\MethodBased\SkipMethodBasedErrors;
-use Roave\BetterReflection\Reflection\ReflectionMethod;
 
 use function uniqid;
 

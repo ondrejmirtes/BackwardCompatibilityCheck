@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace Roave\BackwardCompatibility\DetectChanges\BCBreak\InterfaceBased;
 
+use PHPStan\BetterReflection\Reflection\ReflectionClass;
 use Roave\BackwardCompatibility\Changes;
 use Roave\BackwardCompatibility\DetectChanges\BCBreak\ClassBased\ClassBased;
-use Roave\BetterReflection\Reflection\ReflectionClass;
 
 final class UseClassBasedChecksOnAnInterface implements InterfaceBased
 {

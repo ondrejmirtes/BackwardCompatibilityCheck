@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace Roave\BackwardCompatibility\DetectChanges\BCBreak\InterfaceBased;
 
+use PHPStan\BetterReflection\Reflection\ReflectionClass;
 use Psl\Regex;
 use Roave\BackwardCompatibility\Changes;
-use Roave\BetterReflection\Reflection\ReflectionClass;
 
 /**
  * Interfaces marked "internal" (docblock) are not affected by BC checks.

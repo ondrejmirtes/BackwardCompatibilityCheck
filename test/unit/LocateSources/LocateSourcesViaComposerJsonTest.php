@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace RoaveTest\BackwardCompatibility\LocateSources;
 
+use PHPStan\BetterReflection\BetterReflection;
+use PHPStan\BetterReflection\Reflector\ClassReflector;
 use PHPUnit\Framework\TestCase;
 use Roave\BackwardCompatibility\LocateSources\LocateSourcesViaComposerJson;
-use Roave\BetterReflection\BetterReflection;
-use Roave\BetterReflection\Reflector\ClassReflector;
 
 /**
  * @covers \Roave\BackwardCompatibility\LocateSources\LocateSourcesViaComposerJson

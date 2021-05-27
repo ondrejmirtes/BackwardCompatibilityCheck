@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace Roave\BackwardCompatibility\DetectChanges\BCBreak\FunctionBased;
 
+use PHPStan\BetterReflection\Reflection\ReflectionFunctionAbstract;
 use Roave\BackwardCompatibility\Change;
 use Roave\BackwardCompatibility\Changes;
-use Roave\BetterReflection\Reflection\ReflectionFunctionAbstract;
 use Throwable;
 
 final class SkipFunctionBasedErrors implements FunctionBased

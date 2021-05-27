@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Roave\BackwardCompatibility\DetectChanges\BCBreak\MethodBased;
 
+use PHPStan\BetterReflection\Reflection\ReflectionMethod;
 use Roave\BackwardCompatibility\Changes;
-use Roave\BetterReflection\Reflection\ReflectionMethod;
 
 /**
  * Performs a method BC compliance check on methods that are public

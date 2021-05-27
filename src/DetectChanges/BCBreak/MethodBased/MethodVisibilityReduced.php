@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace Roave\BackwardCompatibility\DetectChanges\BCBreak\MethodBased;
 
+use PHPStan\BetterReflection\Reflection\ReflectionMethod;
 use Psl\Str;
 use Roave\BackwardCompatibility\Change;
 use Roave\BackwardCompatibility\Changes;
-use Roave\BetterReflection\Reflection\ReflectionMethod;
 
 final class MethodVisibilityReduced implements MethodBased
 {

@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace Roave\BackwardCompatibility\DetectChanges\BCBreak\ClassConstantBased;
 
+use PHPStan\BetterReflection\Reflection\ReflectionClassConstant;
 use Roave\BackwardCompatibility\Change;
 use Roave\BackwardCompatibility\Changes;
-use Roave\BetterReflection\Reflection\ReflectionClassConstant;
 use Throwable;
 
 final class SkipClassConstantBasedErrors implements ClassConstantBased

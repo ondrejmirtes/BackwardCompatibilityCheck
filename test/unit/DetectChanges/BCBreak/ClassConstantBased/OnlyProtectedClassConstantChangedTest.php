@@ -4,13 +4,13 @@ declare(strict_types=1);
 
 namespace RoaveTest\BackwardCompatibility\DetectChanges\BCBreak\ClassConstantBased;
 
+use PHPStan\BetterReflection\Reflection\ReflectionClassConstant;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 use Roave\BackwardCompatibility\Change;
 use Roave\BackwardCompatibility\Changes;
 use Roave\BackwardCompatibility\DetectChanges\BCBreak\ClassConstantBased\ClassConstantBased;
 use Roave\BackwardCompatibility\DetectChanges\BCBreak\ClassConstantBased\OnlyProtectedClassConstantChanged;
-use Roave\BetterReflection\Reflection\ReflectionClassConstant;
 
 use function uniqid;
 

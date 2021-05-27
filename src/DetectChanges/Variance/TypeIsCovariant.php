@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace Roave\BackwardCompatibility\DetectChanges\Variance;
 
+use PHPStan\BetterReflection\Reflection\ReflectionType;
 use Psl\Iter;
 use Psl\Str;
-use Roave\BetterReflection\Reflection\ReflectionType;
 use Traversable;
 
 /**

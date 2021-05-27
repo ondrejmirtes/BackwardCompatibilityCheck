@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace Roave\BackwardCompatibility\DetectChanges\BCBreak\PropertyBased;
 
+use PHPStan\BetterReflection\Reflection\ReflectionProperty;
 use Roave\BackwardCompatibility\Change;
 use Roave\BackwardCompatibility\Changes;
-use Roave\BetterReflection\Reflection\ReflectionProperty;
 use Throwable;
 
 final class SkipPropertyBasedErrors implements PropertyBased

@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Roave\BackwardCompatibility\DetectChanges\BCBreak\TraitBased;
 
+use PHPStan\BetterReflection\Reflection\ReflectionClass;
 use Roave\BackwardCompatibility\Changes;
-use Roave\BetterReflection\Reflection\ReflectionClass;
 
 interface TraitBased
 {

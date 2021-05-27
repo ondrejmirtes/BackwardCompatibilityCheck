@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace RoaveTest\BackwardCompatibility\DetectChanges\BCBreak\TraitBased;
 
+use PHPStan\BetterReflection\Reflection\ReflectionClass;
 use PHPUnit\Framework\TestCase;
 use Roave\BackwardCompatibility\Change;
 use Roave\BackwardCompatibility\Changes;
 use Roave\BackwardCompatibility\DetectChanges\BCBreak\TraitBased\MultipleChecksOnATrait;
 use Roave\BackwardCompatibility\DetectChanges\BCBreak\TraitBased\TraitBased;
-use Roave\BetterReflection\Reflection\ReflectionClass;
 use RoaveTest\BackwardCompatibility\Assertion;
 
 /**

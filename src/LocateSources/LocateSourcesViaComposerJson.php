@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace Roave\BackwardCompatibility\LocateSources;
 
-use Roave\BetterReflection\SourceLocator\Ast\Locator;
-use Roave\BetterReflection\SourceLocator\Type\Composer\Factory\MakeLocatorForComposerJson;
-use Roave\BetterReflection\SourceLocator\Type\SourceLocator;
+use PHPStan\BetterReflection\SourceLocator\Ast\Locator;
+use PHPStan\BetterReflection\SourceLocator\Type\Composer\Factory\MakeLocatorForComposerJson;
+use PHPStan\BetterReflection\SourceLocator\Type\SourceLocator;
 
 final class LocateSourcesViaComposerJson implements LocateSources
 {
