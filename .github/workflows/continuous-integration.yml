@@ -30,7 +30,6 @@ jobs:
         uses: laminas/laminas-continuous-integration-action@1.24.0
         env:
           "GITHUB_TOKEN": ${{ secrets.GITHUB_TOKEN }}
-          "INFECTION_DASHBOARD_API_KEY": ${{ secrets.INFECTION_DASHBOARD_API_KEY }}
           "STRYKER_DASHBOARD_API_KEY": ${{ secrets.STRYKER_DASHBOARD_API_KEY }}
         with:
           job: ${{ matrix.job }}
