@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Roave\BackwardCompatibility\DetectChanges\Variance;
 
 use PHPStan\BetterReflection\Reflection\ReflectionType;
-use Psl\Iter;
 use Psl\Str;
 
 /**
@@ -36,39 +35,6 @@ final class TypeIsContravariant
         $typeAsString         = $type->__toString();
         $comparedTypeAsString = $comparedType->__toString();
 
-        if (Str\lowercase($typeAsString) === Str\lowercase($comparedTypeAsString)) {
-            return true;
-        }
-
-        if ($typeAsString === 'void') {
-            // everything is always contravariant to `void`
-            return true;
-        }
-
-        if ($comparedTypeAsString === 'object' && ! $type->isBuiltin()) {
-            // `object` is always contravariant to any object type
-            return true;
-        }
-
-        if ($comparedTypeAsString === 'iterable' && $typeAsString === 'array') {
-            return true;
-        }
-
-        if ($type->isBuiltin() !== $comparedType->isBuiltin()) {
-            return false;
-        }
-
-        if ($type->isBuiltin()) {
-            // All other type declarations have no variance/contravariance relationship
-            return false;
-        }
-
-        $typeReflectionClass = $type->targetReflectionClass();
-
-        if ($comparedType->targetReflectionClass()->isInterface()) {
-            return $typeReflectionClass->implementsInterface($comparedTypeAsString);
-        }
-
-        return Iter\contains($typeReflectionClass->getParentClassNames(), $comparedTypeAsString);
+        return Str\lowercase($typeAsString) === Str\lowercase($comparedTypeAsString);
     }
 }
