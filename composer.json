@@ -57,5 +57,7 @@
             "dealerdirect/phpcodesniffer-composer-installer": true,
             "infection/extension-installer": true
         }
-    }
+    },
+	"minimum-stability": "dev",
+	"prefer-stable": true
 }
