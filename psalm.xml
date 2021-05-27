@@ -9,7 +9,6 @@
     <projectFiles>
         <directory name="bin"/>
         <directory name="src"/>
-        <directory name="test/e2e"/>
         <directory name="test/unit"/>
         <ignoreFiles>
             <directory name="vendor"/>
