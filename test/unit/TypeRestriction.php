@@ -18,10 +18,6 @@ final class TypeRestriction
      * @param mixed[]|mixed $value
      *
      * @return mixed[]
-     *
-     * @psalm-template ArrayishParameterType of array
-     * @psalm-param    ArrayishParameterType|mixed $value
-     * @psalm-return   ArrayishParameterType
      */
     public static function array($value): array
     {
@@ -30,11 +26,6 @@ final class TypeRestriction
         return $value;
     }
 
-    /**
-     * @psalm-template ObjectishParameterType of object
-     * @psalm-param    ObjectishParameterType|null $value
-     * @psalm-return   ObjectishParameterType
-     */
     public static function object(?object $value): object
     {
         assert($value !== null);
