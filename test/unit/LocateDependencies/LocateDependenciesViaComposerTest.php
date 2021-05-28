@@ -79,7 +79,7 @@ final class LocateDependenciesViaComposerTest extends TestCase
             ->composerInstaller
             ->expects(self::atLeastOnce())
             ->method('setDevMode')
-            ->with(false);
+            ->with(true);
         $this
             ->composerInstaller
             ->expects(self::atLeastOnce())

@@ -43,7 +43,7 @@ final class LocateDependenciesViaComposer implements LocateDependencies
             $installer = Type\object(Installer::class)->assert(($this->makeComposerInstaller)($installationPath));
 
             // Some defaults needed for this specific implementation:
-            $installer->setDevMode(false);
+            $installer->setDevMode(true);
             $installer->setDumpAutoloader(false);
             $installer->setRunScripts(false);
             $installer->setIgnorePlatformRequirements(true);
