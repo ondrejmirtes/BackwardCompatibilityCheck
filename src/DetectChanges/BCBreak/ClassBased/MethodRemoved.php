@@ -5,12 +5,12 @@ declare(strict_types=1);
 namespace Roave\BackwardCompatibility\DetectChanges\BCBreak\ClassBased;
 
 use Psl\Dict;
-use Psl\Regex;
 use Psl\Str;
 use Psl\Vec;
 use Roave\BackwardCompatibility\Change;
 use Roave\BackwardCompatibility\Changes;
 use Roave\BackwardCompatibility\Formatter\FunctionName;
+use Roave\BackwardCompatibility\InternalHelper;
 use Roave\BetterReflection\Reflection\ReflectionClass;
 use Roave\BetterReflection\Reflection\ReflectionMethod;
 
@@ -61,7 +61,7 @@ final class MethodRemoved implements ClassBased
     {
         $methods = Vec\filter($class->getMethods(), function (ReflectionMethod $method) use ($class): bool {
             return $this->isAccessibleMethod($method, $class)
-                && ! $this->isInternalDocComment($method->getDocComment());
+                && ! InternalHelper::isMethodInternal($method);
         });
 
         return Dict\associate(
@@ -79,11 +79,5 @@ final class MethodRemoved implements ClassBased
         }
 
         return $method->isProtected() && ! $class->isFinal();
-    }
-
-    private function isInternalDocComment(string|null $comment): bool
-    {
-        return $comment !== null
-            && Regex\matches($comment, '/\s+@internal\s+/');
     }
 }

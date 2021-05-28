@@ -48,11 +48,11 @@ final class ClassBecameInternalTest extends TestCase
             <<<'PHP'
 <?php
 
+/** @api */
 class A {}
+/** @api */
 class B {}
-/** @internal */
 class C {}
-/** @internal */
 class D {}
 PHP
             ,
@@ -62,11 +62,12 @@ PHP
             <<<'PHP'
 <?php
 
+/** @api */
 class A {}
-/** @internal */
 class B {}
-/** @internal */
 class C {}
+
+/** @api */
 class D {}
 PHP
             ,

@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Roave\BackwardCompatibility\DetectChanges\BCBreak\TraitBased;
 
-use Psl\Regex;
 use Roave\BackwardCompatibility\Changes;
+use Roave\BackwardCompatibility\InternalHelper;
 use Roave\BetterReflection\Reflection\ReflectionClass;
 
 /**
@@ -19,16 +19,10 @@ final class ExcludeInternalTrait implements TraitBased
 
     public function __invoke(ReflectionClass $fromTrait, ReflectionClass $toTrait): Changes
     {
-        if ($this->isInternalDocComment($fromTrait->getDocComment())) {
+        if (InternalHelper::isTraitInternal($fromTrait)) {
             return Changes::empty();
         }
 
         return ($this->check)($fromTrait, $toTrait);
-    }
-
-    private function isInternalDocComment(string|null $comment): bool
-    {
-        return $comment !== null
-            && Regex\matches($comment, '/\s+@internal\s+/');
     }
 }

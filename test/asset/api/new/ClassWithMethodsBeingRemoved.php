@@ -6,15 +6,22 @@ namespace RoaveTestAsset;
 
 class ClassWithMethodsBeingRemoved
 {
+	/** @api */
     public function nameCaseChangePublicMethod() : void
     {
     }
+
+	/** @api */
     public function keptPublicMethod() : void
     {
     }
+
+	/** @api */
     protected function nameCaseChangeProtectedMethod() : void
     {
     }
+
+	/** @api */
     protected function keptProtectedMethod() : void
     {
     }

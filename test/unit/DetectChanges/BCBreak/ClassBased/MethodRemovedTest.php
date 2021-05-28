@@ -86,6 +86,7 @@ final class MethodRemovedTest extends TestCase
                 (new DefaultReflector(new StringSourceLocator(
                     <<<'PHP'
                     <?php
+                    /** @api */
                     final class FinalClassWithPublicMethod {
                         public function foo(string $bar): void {}
                     }
@@ -95,6 +96,7 @@ final class MethodRemovedTest extends TestCase
                 (new DefaultReflector(new StringSourceLocator(
                     <<<'PHP'
                     <?php
+                    /** @api */
                     final class FinalClassWithPublicMethod {
                         private function foo(string $bar): void {}
                     }
@@ -107,13 +109,17 @@ final class MethodRemovedTest extends TestCase
                 (new DefaultReflector(new StringSourceLocator(
                     <<<'PHP'
                     <?php
+                    /** @api */
                     trait ParentTrait {
                         public function traitMethod(): void {}
                     }
+                    /** @api */
                     interface GrandParentInterface {
                         public function interfaceMethod(): void;
                     }
+                    /** @api */
                     interface ParentInterface extends GrandParentInterface {}
+                    /** @api */
                     abstract class ParentClass {
                         use ParentTrait;
                         public function publicMethod(): void {}
@@ -121,6 +127,7 @@ final class MethodRemovedTest extends TestCase
                         public static function staticMethod(): void {}
                         public function keptMethod(): void {}
                     }
+                    /** @api */
                     abstract class ChildClass extends ParentClass implements ParentInterface {
                         public function ownMethod(): void {}
                     }
@@ -130,10 +137,13 @@ final class MethodRemovedTest extends TestCase
                 (new DefaultReflector(new StringSourceLocator(
                     <<<'PHP'
                     <?php
+                    /** @api */
                     interface ParentInterface {}
+                    /** @api */
                     abstract class ParentClass {
                         public function keptMethod(): void {}
                     }
+                    /** @api */
                     abstract class ChildClass extends ParentClass implements ParentInterface {}
                     PHP,
                     $locator,
@@ -151,9 +161,11 @@ final class MethodRemovedTest extends TestCase
                 (new DefaultReflector(new StringSourceLocator(
                     <<<'PHP'
                     <?php
+                    /** @api */
                     interface ParentInterface {
                         public function parentMethod(): void;
                     }
+                    /** @api */
                     interface ChildInterface extends ParentInterface {}
                     PHP,
                     $locator,
@@ -161,7 +173,9 @@ final class MethodRemovedTest extends TestCase
                 (new DefaultReflector(new StringSourceLocator(
                     <<<'PHP'
                     <?php
+                    /** @api */
                     interface ParentInterface {}
+                    /** @api */
                     interface ChildInterface extends ParentInterface {}
                     PHP,
                     $locator,

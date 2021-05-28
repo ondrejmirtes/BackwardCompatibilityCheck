@@ -6,21 +6,32 @@ namespace RoaveTestAsset;
 
 class ClassWithMethodsBeingRemoved
 {
+	/** @api */
     public function removedPublicMethod() : void
     {
     }
+
+	/** @api */
     public function nameCaseChangePublicMethod() : void
     {
     }
+
+	/** @api */
     public function keptPublicMethod() : void
     {
     }
+
+	/** @api */
     protected function removedProtectedMethod() : void
     {
     }
+
+	/** @api */
     protected function nameCaseChangeProtectedMethod() : void
     {
     }
+
+	/** @api */
     protected function keptProtectedMethod() : void
     {
     }
@@ -33,15 +44,15 @@ class ClassWithMethodsBeingRemoved
     private function keptPrivateMethod() : void
     {
     }
-    /** @internal */
+
     public function removedInternalPublicMethod() : void
     {
     }
-    /** @internal */
+
     protected function removedInternalProtectedMethod() : void
     {
     }
-    /** @internal */
+
     protected function removedInternalPrivateMethod() : void
     {
     }
