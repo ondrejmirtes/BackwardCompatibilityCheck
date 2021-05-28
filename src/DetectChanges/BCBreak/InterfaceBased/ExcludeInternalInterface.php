@@ -5,8 +5,8 @@ declare(strict_types=1);
 namespace Roave\BackwardCompatibility\DetectChanges\BCBreak\InterfaceBased;
 
 use PHPStan\BetterReflection\Reflection\ReflectionClass;
-use Psl\Regex;
 use Roave\BackwardCompatibility\Changes;
+use Roave\BackwardCompatibility\InternalHelper;
 
 /**
  * Interfaces marked "internal" (docblock) are not affected by BC checks.
@@ -22,15 +22,10 @@ final class ExcludeInternalInterface implements InterfaceBased
 
     public function __invoke(ReflectionClass $fromInterface, ReflectionClass $toInterface): Changes
     {
-        if ($this->isInternalDocComment($fromInterface->getDocComment())) {
+        if (InternalHelper::isInterfaceInternal($fromInterface)) {
             return Changes::empty();
         }
 
         return $this->check->__invoke($fromInterface, $toInterface);
-    }
-
-    private function isInternalDocComment(string $comment): bool
-    {
-        return Regex\matches($comment, '/\s+@internal\s+/');
     }
 }

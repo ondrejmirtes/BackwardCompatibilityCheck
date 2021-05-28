@@ -59,11 +59,12 @@ final class CompareClassesTest extends TestCase
         Assertion::assertChangesEqual(
             Changes::fromList(Change::changed('class change', true)),
             $this->compareClasses->__invoke(
-                self::$stringReflectorFactory->__invoke('<?php class A {}'),
+                self::$stringReflectorFactory->__invoke('<?php /** @api */class A {}'),
                 self::$stringReflectorFactory->__invoke(
                     <<<'PHP'
 <?php
 
+/** @api */
 class A {
     const A_CONSTANT = 'foo';
     public $aProperty;
@@ -75,6 +76,7 @@ PHP
                     <<<'PHP'
 <?php
 
+/** @api */
 class A {
     const A_CONSTANT = 'foo';
     public $aProperty;
@@ -95,11 +97,12 @@ PHP
         Assertion::assertChangesEqual(
             Changes::fromList(Change::changed('class change', true)),
             $this->compareClasses->__invoke(
-                self::$stringReflectorFactory->__invoke('<?php class A {}'),
+                self::$stringReflectorFactory->__invoke('<?php /** @api */ class A {}'),
                 self::$stringReflectorFactory->__invoke(
                     <<<'PHP'
 <?php
 
+/** @api */
 class A {
     const A_CONSTANT = 'foo';
     public $aProperty;
@@ -111,6 +114,7 @@ PHP
                     <<<'PHP'
 <?php
 
+/** @api */
 class A {}
 PHP
                 )
@@ -127,9 +131,9 @@ PHP
         Assertion::assertChangesEqual(
             Changes::fromList(Change::changed('interface change', true)),
             $this->compareClasses->__invoke(
-                self::$stringReflectorFactory->__invoke('<?php interface A {}'),
-                self::$stringReflectorFactory->__invoke('<?php interface A {}'),
-                self::$stringReflectorFactory->__invoke('<?php interface A {}')
+                self::$stringReflectorFactory->__invoke('<?php /** @api */ interface A {}'),
+                self::$stringReflectorFactory->__invoke('<?php /** @api */ interface A {}'),
+                self::$stringReflectorFactory->__invoke('<?php /** @api */ interface A {}')
             )
         );
     }
@@ -143,9 +147,9 @@ PHP
         Assertion::assertChangesEqual(
             Changes::fromList(Change::changed('trait change', true)),
             $this->compareClasses->__invoke(
-                self::$stringReflectorFactory->__invoke('<?php trait A {}'),
-                self::$stringReflectorFactory->__invoke('<?php trait A {}'),
-                self::$stringReflectorFactory->__invoke('<?php trait A {}')
+                self::$stringReflectorFactory->__invoke('<?php /** @api */ trait A {}'),
+                self::$stringReflectorFactory->__invoke('<?php /** @api */ trait A {}'),
+                self::$stringReflectorFactory->__invoke('<?php /** @api */ trait A {}')
             )
         );
     }
@@ -174,7 +178,7 @@ PHP
             Changes::empty(),
             $this->compareClasses->__invoke(
                 self::$stringReflectorFactory->__invoke('<?php '),
-                self::$stringReflectorFactory->__invoke('<?php class A { private function foo() {} }'),
+                self::$stringReflectorFactory->__invoke('<?php /** @api */ class A { private function foo() {} }'),
                 self::$stringReflectorFactory->__invoke('<?php ')
             )
         );
@@ -192,11 +196,8 @@ PHP
                 self::$stringReflectorFactory->__invoke(<<<'PHP'
 <?php
 
-/** @internal */
 class A {}
-/** @internal */
 interface B {}
-/** @internal */
 trait C {}
 PHP
                 ),
@@ -215,8 +216,8 @@ PHP
         Assertion::assertChangesEqual(
             Changes::fromList(Change::removed('Class A has been deleted', true)),
             $this->compareClasses->__invoke(
-                self::$stringReflectorFactory->__invoke('<?php class A { private function foo() {} }'),
-                self::$stringReflectorFactory->__invoke('<?php class A { private function foo() {} }'),
+                self::$stringReflectorFactory->__invoke('<?php /** @api */ class A { private function foo() {} }'),
+                self::$stringReflectorFactory->__invoke('<?php /** @api */ class A { private function foo() {} }'),
                 self::$stringReflectorFactory->__invoke('<?php ')
             )
         );

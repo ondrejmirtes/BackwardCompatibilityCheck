@@ -5,8 +5,8 @@ declare(strict_types=1);
 namespace Roave\BackwardCompatibility\DetectChanges\BCBreak\ClassBased;
 
 use PHPStan\BetterReflection\Reflection\ReflectionClass;
-use Psl\Regex;
 use Roave\BackwardCompatibility\Changes;
+use Roave\BackwardCompatibility\InternalHelper;
 
 /**
  * Classes marked "internal" (docblock) are not affected by BC checks.
@@ -22,15 +22,10 @@ final class ExcludeInternalClass implements ClassBased
 
     public function __invoke(ReflectionClass $fromClass, ReflectionClass $toClass): Changes
     {
-        if ($this->isInternalDocComment($fromClass->getDocComment())) {
+        if (InternalHelper::isClassInternal($fromClass)) {
             return Changes::empty();
         }
 
         return $this->check->__invoke($fromClass, $toClass);
-    }
-
-    private function isInternalDocComment(string $comment): bool
-    {
-        return Regex\matches($comment, '/\s+@internal\s+/');
     }
 }

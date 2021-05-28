@@ -23,6 +23,7 @@ final class ExcludeInternalClassTest extends TestCase
             <<<'PHP'
 <?php
 
+/** @api */
 class ANormalClass {}
 PHP
             ,
@@ -51,7 +52,6 @@ PHP
             <<<'PHP'
 <?php
 
-/** @internal */
 class AnInternalClass {}
 PHP
             ,

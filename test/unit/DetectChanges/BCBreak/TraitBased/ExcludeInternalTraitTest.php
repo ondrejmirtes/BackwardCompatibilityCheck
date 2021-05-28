@@ -23,6 +23,7 @@ final class ExcludeInternalTraitTest extends TestCase
             <<<'PHP'
 <?php
 
+/** @api */
 trait ANormalTrait {}
 PHP
             ,
@@ -50,7 +51,6 @@ PHP
             <<<'PHP'
 <?php
 
-/** @internal */
 trait AnInternalTrait {}
 PHP
             ,

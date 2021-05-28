@@ -5,8 +5,8 @@ declare(strict_types=1);
 namespace Roave\BackwardCompatibility\DetectChanges\BCBreak\PropertyBased;
 
 use PHPStan\BetterReflection\Reflection\ReflectionProperty;
-use Psl\Regex;
 use Roave\BackwardCompatibility\Changes;
+use Roave\BackwardCompatibility\InternalHelper;
 
 final class ExcludeInternalProperty implements PropertyBased
 {
@@ -19,15 +19,10 @@ final class ExcludeInternalProperty implements PropertyBased
 
     public function __invoke(ReflectionProperty $fromProperty, ReflectionProperty $toProperty): Changes
     {
-        if ($this->isInternalDocComment($fromProperty->getDocComment())) {
+        if (InternalHelper::isPropertyInternal($fromProperty)) {
             return Changes::empty();
         }
 
         return $this->propertyBased->__invoke($fromProperty, $toProperty);
-    }
-
-    private function isInternalDocComment(string $comment): bool
-    {
-        return Regex\matches($comment, '/\s+@internal\s+/');
     }
 }
