@@ -23,7 +23,7 @@ final class SkipInterface implements InterfaceBased
 
     public function __invoke(ReflectionClass $fromInterface, ReflectionClass $toInterface): Changes
     {
-        if ($fromInterface->getName() === $this->interfaceName) {
+        if ($fromInterface->getName() === $this->interfaceName || $fromInterface->implementsInterface($this->interfaceName)) {
             return Changes::empty();
         }
 
