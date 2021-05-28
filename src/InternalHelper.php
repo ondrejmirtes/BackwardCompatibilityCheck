@@ -36,6 +36,10 @@ class InternalHelper
             return false;
         }
 
+        if ($method->isConstructor()) {
+            return true;
+        }
+
         $declaringClass  = $method->getImplementingClass();
         $classDocComment = $declaringClass->getDocComment();
 
