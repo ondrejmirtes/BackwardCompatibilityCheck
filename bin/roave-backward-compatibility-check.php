@@ -405,7 +405,10 @@ use function file_exists;
                             new InterfaceBased\AncestorRemoved()
                         ),
                         new InterfaceBased\SkipInterfaceBasedErrors(
-                            new InterfaceBased\MethodAdded()
+                            new InterfaceBased\SkipInterface(
+                                'PHPStan\Type\Type',
+                                new InterfaceBased\MethodAdded()
+                            )
                         ),
                         new InterfaceBased\SkipInterfaceBasedErrors(
                             new InterfaceBased\UseClassBasedChecksOnAnInterface(
