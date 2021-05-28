@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Roave\BackwardCompatibility;
 
 use Psl\Dict;
-use Psl\Regex;
 use Psl\Str;
 use Roave\BackwardCompatibility\DetectChanges\BCBreak\ClassBased\ClassBased;
 use Roave\BackwardCompatibility\DetectChanges\BCBreak\InterfaceBased\InterfaceBased;
@@ -31,9 +30,9 @@ final class CompareClasses implements CompareApi
         $definedApiClassNames = Dict\map(
             Dict\filter(
                 $definedSymbols->reflectAllClasses(),
-                function (ReflectionClass $class): bool {
-                    return ! ($class->isAnonymous() || $this->isInternalDocComment($class->getDocComment()));
-                },
+                static function (ReflectionClass $class): bool {
+                    return ! ($class->isAnonymous() || InternalHelper::isClassInternal($class));
+                }
             ),
             static function (ReflectionClass $class): string {
                 return $class->getName();
@@ -90,10 +89,5 @@ final class CompareClasses implements CompareApi
         }
 
         yield from ($this->classBasedComparisons)($oldSymbol, $newClass);
-    }
-
-    private function isInternalDocComment(string $comment): bool
-    {
-        return Regex\matches($comment, '/\s+@internal\s+/');
     }
 }

@@ -23,6 +23,7 @@ final class ExcludeInternalPropertyTest extends TestCase
 <?php
 
 class A {
+	/** @api */
     public $property;
 }
 PHP
@@ -53,7 +54,6 @@ PHP
 <?php
 
 class A {
-    /** @internal */
     public $property;
 }
 PHP

@@ -6,6 +6,7 @@ namespace Roave\BackwardCompatibility\DetectChanges\BCBreak\MethodBased;
 
 use Psl\Regex;
 use Roave\BackwardCompatibility\Changes;
+use Roave\BackwardCompatibility\InternalHelper;
 use Roave\BetterReflection\Reflection\ReflectionMethod;
 
 /**
@@ -19,15 +20,10 @@ final class ExcludeInternalMethod implements MethodBased
 
     public function __invoke(ReflectionMethod $fromMethod, ReflectionMethod $toMethod): Changes
     {
-        if ($this->isInternalDocComment($fromMethod->getDocComment())) {
+        if (InternalHelper::isMethodInternal($fromMethod)) {
             return Changes::empty();
         }
 
         return ($this->check)($fromMethod, $toMethod);
-    }
-
-    private function isInternalDocComment(string $comment): bool
-    {
-        return Regex\matches($comment, '/\s+@internal\s+/');
     }
 }

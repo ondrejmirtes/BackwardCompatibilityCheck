@@ -54,11 +54,14 @@ final class PropertyBecameInternalTest extends TestCase
 <?php
 
 class TheClass {
+	/** @api */
     public $nonInternal;
+    
+    /** @api */
     public $becameInternal;
-    /** @internal */
+
     public $becameNonInternal;
-    /** @internal */
+
     public $stayedInternal;
 }
 PHP
@@ -71,11 +74,14 @@ PHP
 <?php
 
 class TheClass {
+	/** @api */
     public $nonInternal;
-    /** @internal */
+
     public $becameInternal;
+    
+    /** @api */
     public $becameNonInternal;
-    /** @internal */
+
     public $stayedInternal;
 }
 PHP

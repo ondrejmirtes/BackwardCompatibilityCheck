@@ -4,11 +4,11 @@ declare(strict_types=1);
 
 namespace Roave\BackwardCompatibility\DetectChanges\BCBreak\PropertyBased;
 
-use Psl\Regex;
 use Psl\Str;
 use Roave\BackwardCompatibility\Change;
 use Roave\BackwardCompatibility\Changes;
 use Roave\BackwardCompatibility\Formatter\ReflectionPropertyName;
+use Roave\BackwardCompatibility\InternalHelper;
 use Roave\BetterReflection\Reflection\ReflectionProperty;
 
 /**
@@ -26,8 +26,8 @@ final class PropertyBecameInternal implements PropertyBased
     public function __invoke(ReflectionProperty $fromProperty, ReflectionProperty $toProperty): Changes
     {
         if (
-            $this->isInternalDocComment($toProperty->getDocComment())
-            && ! $this->isInternalDocComment($fromProperty->getDocComment())
+            InternalHelper::isPropertyInternal($toProperty)
+            && ! InternalHelper::isPropertyInternal($fromProperty)
         ) {
             return Changes::fromList(Change::changed(
                 Str\format(
@@ -38,10 +38,5 @@ final class PropertyBecameInternal implements PropertyBased
         }
 
         return Changes::empty();
-    }
-
-    private function isInternalDocComment(string $comment): bool
-    {
-        return Regex\matches($comment, '/\s+@internal\s+/');
     }
 }

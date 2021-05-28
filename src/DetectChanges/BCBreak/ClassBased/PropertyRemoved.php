@@ -5,12 +5,12 @@ declare(strict_types=1);
 namespace Roave\BackwardCompatibility\DetectChanges\BCBreak\ClassBased;
 
 use Psl\Dict;
-use Psl\Regex;
 use Psl\Str;
 use Psl\Vec;
 use Roave\BackwardCompatibility\Change;
 use Roave\BackwardCompatibility\Changes;
 use Roave\BackwardCompatibility\Formatter\ReflectionPropertyName;
+use Roave\BackwardCompatibility\InternalHelper;
 use Roave\BetterReflection\Reflection\ReflectionClass;
 use Roave\BetterReflection\Reflection\ReflectionProperty;
 
@@ -43,15 +43,10 @@ final class PropertyRemoved implements ClassBased
     {
         $classIsOpen = ! $class->isFinal();
 
-        return Dict\filter($class->getProperties(), function (ReflectionProperty $property) use ($classIsOpen): bool {
+        return Dict\filter($class->getProperties(), static function (ReflectionProperty $property) use ($classIsOpen): bool {
             return ($property->isPublic()
                 || ($classIsOpen && $property->isProtected()))
-                && ! $this->isInternalDocComment($property->getDocComment());
+                && ! InternalHelper::isPropertyInternal($property);
         });
-    }
-
-    private function isInternalDocComment(string $comment): bool
-    {
-        return Regex\matches($comment, '/\s+@internal\s+/');
     }
 }

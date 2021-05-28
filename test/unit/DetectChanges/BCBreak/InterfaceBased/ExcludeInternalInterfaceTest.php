@@ -23,6 +23,7 @@ final class ExcludeInternalInterfaceTest extends TestCase
             <<<'PHP'
 <?php
 
+/** @api */
 interface ANormalInterface {}
 PHP
             ,
@@ -49,7 +50,6 @@ PHP
             <<<'PHP'
 <?php
 
-/** @internal */
 interface AnInternalInterface {}
 PHP
             ,

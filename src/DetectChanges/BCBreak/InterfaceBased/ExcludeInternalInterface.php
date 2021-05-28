@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Roave\BackwardCompatibility\DetectChanges\BCBreak\InterfaceBased;
 
-use Psl\Regex;
 use Roave\BackwardCompatibility\Changes;
+use Roave\BackwardCompatibility\InternalHelper;
 use Roave\BetterReflection\Reflection\ReflectionClass;
 
 /**
@@ -19,15 +19,10 @@ final class ExcludeInternalInterface implements InterfaceBased
 
     public function __invoke(ReflectionClass $fromInterface, ReflectionClass $toInterface): Changes
     {
-        if ($this->isInternalDocComment($fromInterface->getDocComment())) {
+        if (InternalHelper::isInterfaceInternal($fromInterface)) {
             return Changes::empty();
         }
 
         return ($this->check)($fromInterface, $toInterface);
-    }
-
-    private function isInternalDocComment(string $comment): bool
-    {
-        return Regex\matches($comment, '/\s+@internal\s+/');
     }
 }
