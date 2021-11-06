@@ -232,8 +232,8 @@ use function file_exists;
                 new InterfaceBased\SkipInterfaceBasedErrors(new InterfaceBased\InterfaceBecameClass()),
                 new InterfaceBased\SkipInterfaceBasedErrors(new InterfaceBased\InterfaceBecameTrait()),
                 new InterfaceBased\SkipInterfaceBasedErrors(new InterfaceBased\AncestorRemoved()),
-                new InterfaceBased\SkipInterfaceBasedErrors(new InterfaceBased\SkipInterface(
-					'PHPStan\Type\Type',
+                new InterfaceBased\SkipInterfaceBasedErrors(new InterfaceBased\SkipInterfaces(
+					['PHPStan\Type\Type', 'PHPStan\Analyser\Scope'],
 					new InterfaceBased\MethodAdded(),
 				)),
                 new InterfaceBased\SkipInterfaceBasedErrors(new InterfaceBased\UseClassBasedChecksOnAnInterface(
