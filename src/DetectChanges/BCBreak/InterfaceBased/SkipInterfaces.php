@@ -9,22 +9,26 @@ use Roave\BackwardCompatibility\Change;
 use Roave\BackwardCompatibility\Changes;
 use Throwable;
 
-final class SkipInterface implements InterfaceBased
+final class SkipInterfaces implements InterfaceBased
 {
-    private string $interfaceName;
+    /** @var string[] */
+    private array $interfaceNames;
 
     private InterfaceBased $next;
 
-    public function __construct(string $interfaceName, InterfaceBased $next)
+    /** @param string[] $interfaceNames */
+    public function __construct(array $interfaceNames, InterfaceBased $next)
     {
-        $this->interfaceName = $interfaceName;
-        $this->next          = $next;
+        $this->interfaceNames = $interfaceNames;
+        $this->next           = $next;
     }
 
     public function __invoke(ReflectionClass $fromInterface, ReflectionClass $toInterface): Changes
     {
-        if ($fromInterface->getName() === $this->interfaceName || $fromInterface->implementsInterface($this->interfaceName)) {
-            return Changes::empty();
+        foreach ($this->interfaceNames as $interfaceName) {
+            if ($fromInterface->getName() === $interfaceName || $fromInterface->implementsInterface($interfaceName)) {
+                return Changes::empty();
+            }
         }
 
         try {
