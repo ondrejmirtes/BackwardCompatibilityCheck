@@ -233,7 +233,7 @@ use function file_exists;
                 new InterfaceBased\SkipInterfaceBasedErrors(new InterfaceBased\InterfaceBecameTrait()),
                 new InterfaceBased\SkipInterfaceBasedErrors(new InterfaceBased\AncestorRemoved()),
                 new InterfaceBased\SkipInterfaceBasedErrors(new InterfaceBased\SkipInterfaces(
-					['PHPStan\Type\Type', 'PHPStan\Analyser\Scope'],
+					['PHPStan\Type\Type', 'PHPStan\Analyser\Scope', 'PHPStan\Reflection\ReflectionProvider'],
 					new InterfaceBased\MethodAdded(),
 				)),
                 new InterfaceBased\SkipInterfaceBasedErrors(new InterfaceBased\UseClassBasedChecksOnAnInterface(
