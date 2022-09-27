@@ -11,8 +11,8 @@ use Roave\BackwardCompatibility\Change;
 use Roave\BackwardCompatibility\Changes;
 use Roave\BackwardCompatibility\Formatter\ReflectionPropertyName;
 use Roave\BackwardCompatibility\InternalHelper;
-use Roave\BetterReflection\Reflection\ReflectionClass;
-use Roave\BetterReflection\Reflection\ReflectionProperty;
+use PHPStan\BetterReflection\Reflection\ReflectionClass;
+use PHPStan\BetterReflection\Reflection\ReflectionProperty;
 
 final class PropertyRemoved implements ClassBased
 {

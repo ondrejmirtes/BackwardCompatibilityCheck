@@ -6,9 +6,9 @@ namespace Roave\BackwardCompatibility\DetectChanges\Variance;
 
 use Psl\Iter;
 use Psl\Str;
-use Roave\BetterReflection\Reflection\ReflectionIntersectionType;
-use Roave\BetterReflection\Reflection\ReflectionNamedType;
-use Roave\BetterReflection\Reflection\ReflectionUnionType;
+use PHPStan\BetterReflection\Reflection\ReflectionIntersectionType;
+use PHPStan\BetterReflection\Reflection\ReflectionNamedType;
+use PHPStan\BetterReflection\Reflection\ReflectionUnionType;
 
 /**
  * This is a simplistic covariant type check. A more appropriate approach would be to

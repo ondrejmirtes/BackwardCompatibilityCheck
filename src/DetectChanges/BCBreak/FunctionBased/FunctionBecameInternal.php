@@ -9,8 +9,8 @@ use Psl\Str;
 use Roave\BackwardCompatibility\Change;
 use Roave\BackwardCompatibility\Changes;
 use Roave\BackwardCompatibility\Formatter\FunctionName;
-use Roave\BetterReflection\Reflection\ReflectionFunction;
-use Roave\BetterReflection\Reflection\ReflectionMethod;
+use PHPStan\BetterReflection\Reflection\ReflectionFunction;
+use PHPStan\BetterReflection\Reflection\ReflectionMethod;
 
 /**
  * A function that is marked internal is no available to downstream consumers.

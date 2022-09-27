@@ -6,8 +6,8 @@ namespace RoaveTest\BackwardCompatibility\LocateSources;
 
 use PHPUnit\Framework\TestCase;
 use Roave\BackwardCompatibility\LocateSources\LocateSourcesViaComposerJson;
-use Roave\BetterReflection\BetterReflection;
-use Roave\BetterReflection\Reflector\DefaultReflector;
+use PHPStan\BetterReflection\BetterReflection;
+use PHPStan\BetterReflection\Reflector\DefaultReflector;
 
 /** @covers \Roave\BackwardCompatibility\LocateSources\LocateSourcesViaComposerJson */
 final class LocateSourcesViaComposerJsonTest extends TestCase

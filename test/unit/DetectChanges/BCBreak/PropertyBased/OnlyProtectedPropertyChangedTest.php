@@ -10,7 +10,7 @@ use Roave\BackwardCompatibility\Change;
 use Roave\BackwardCompatibility\Changes;
 use Roave\BackwardCompatibility\DetectChanges\BCBreak\PropertyBased\OnlyProtectedPropertyChanged;
 use Roave\BackwardCompatibility\DetectChanges\BCBreak\PropertyBased\PropertyBased;
-use Roave\BetterReflection\Reflection\ReflectionProperty;
+use PHPStan\BetterReflection\Reflection\ReflectionProperty;
 
 use function uniqid;
 

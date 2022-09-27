@@ -9,10 +9,10 @@ use Psl\Dict;
 use Psl\Filesystem;
 use Psl\Iter;
 use Psl\Type;
-use Roave\BetterReflection\Identifier\Identifier;
-use Roave\BetterReflection\SourceLocator\Ast\Locator;
-use Roave\BetterReflection\SourceLocator\Located\LocatedSource;
-use Roave\BetterReflection\SourceLocator\Type\AbstractSourceLocator;
+use PHPStan\BetterReflection\Identifier\Identifier;
+use PHPStan\BetterReflection\SourceLocator\Ast\Locator;
+use PHPStan\BetterReflection\SourceLocator\Located\LocatedSource;
+use PHPStan\BetterReflection\SourceLocator\Type\AbstractSourceLocator;
 
 final class StaticClassMapSourceLocator extends AbstractSourceLocator
 {

@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Roave\BackwardCompatibility\Formatter;
 
-use Roave\BetterReflection\Reflection\ReflectionProperty;
+use PHPStan\BetterReflection\Reflection\ReflectionProperty;
 
 final class ReflectionPropertyName
 {

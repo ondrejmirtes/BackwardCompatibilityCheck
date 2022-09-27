@@ -9,8 +9,8 @@ use Roave\BackwardCompatibility\Change;
 use Roave\BackwardCompatibility\Changes;
 use Roave\BackwardCompatibility\DetectChanges\BCBreak\PropertyBased\MultipleChecksOnAProperty;
 use Roave\BackwardCompatibility\DetectChanges\BCBreak\PropertyBased\PropertyBased;
-use Roave\BetterReflection\Reflection\ReflectionClass;
-use Roave\BetterReflection\Reflection\ReflectionProperty;
+use PHPStan\BetterReflection\Reflection\ReflectionClass;
+use PHPStan\BetterReflection\Reflection\ReflectionProperty;
 use RoaveTest\BackwardCompatibility\Assertion;
 
 /** @covers \Roave\BackwardCompatibility\DetectChanges\BCBreak\PropertyBased\MultipleChecksOnAProperty */

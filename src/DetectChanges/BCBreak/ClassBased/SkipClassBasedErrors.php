@@ -6,7 +6,7 @@ namespace Roave\BackwardCompatibility\DetectChanges\BCBreak\ClassBased;
 
 use Roave\BackwardCompatibility\Change;
 use Roave\BackwardCompatibility\Changes;
-use Roave\BetterReflection\Reflection\ReflectionClass;
+use PHPStan\BetterReflection\Reflection\ReflectionClass;
 use Throwable;
 
 final class SkipClassBasedErrors implements ClassBased

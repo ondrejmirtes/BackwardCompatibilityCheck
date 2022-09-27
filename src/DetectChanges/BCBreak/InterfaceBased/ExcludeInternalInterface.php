@@ -6,7 +6,7 @@ namespace Roave\BackwardCompatibility\DetectChanges\BCBreak\InterfaceBased;
 
 use Roave\BackwardCompatibility\Changes;
 use Roave\BackwardCompatibility\InternalHelper;
-use Roave\BetterReflection\Reflection\ReflectionClass;
+use PHPStan\BetterReflection\Reflection\ReflectionClass;
 
 /**
  * Interfaces marked "internal" (docblock) are not affected by BC checks.

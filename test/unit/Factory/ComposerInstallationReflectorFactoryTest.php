@@ -7,9 +7,9 @@ namespace RoaveTest\BackwardCompatibility\Factory;
 use PHPUnit\Framework\TestCase;
 use Roave\BackwardCompatibility\Factory\ComposerInstallationReflectorFactory;
 use Roave\BackwardCompatibility\LocateSources\LocateSources;
-use Roave\BetterReflection\BetterReflection;
-use Roave\BetterReflection\SourceLocator\Type\SourceLocator;
-use Roave\BetterReflection\SourceLocator\Type\StringSourceLocator;
+use PHPStan\BetterReflection\BetterReflection;
+use PHPStan\BetterReflection\SourceLocator\Type\SourceLocator;
+use PHPStan\BetterReflection\SourceLocator\Type\StringSourceLocator;
 
 use function uniqid;
 

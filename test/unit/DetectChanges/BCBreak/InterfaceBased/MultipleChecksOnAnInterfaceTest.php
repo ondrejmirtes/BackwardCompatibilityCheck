@@ -9,7 +9,7 @@ use Roave\BackwardCompatibility\Change;
 use Roave\BackwardCompatibility\Changes;
 use Roave\BackwardCompatibility\DetectChanges\BCBreak\InterfaceBased\InterfaceBased;
 use Roave\BackwardCompatibility\DetectChanges\BCBreak\InterfaceBased\MultipleChecksOnAnInterface;
-use Roave\BetterReflection\Reflection\ReflectionClass;
+use PHPStan\BetterReflection\Reflection\ReflectionClass;
 use RoaveTest\BackwardCompatibility\Assertion;
 
 /** @covers \Roave\BackwardCompatibility\DetectChanges\BCBreak\InterfaceBased\MultipleChecksOnAnInterface */

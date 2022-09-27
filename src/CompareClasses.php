@@ -9,9 +9,9 @@ use Psl\Str;
 use Roave\BackwardCompatibility\DetectChanges\BCBreak\ClassBased\ClassBased;
 use Roave\BackwardCompatibility\DetectChanges\BCBreak\InterfaceBased\InterfaceBased;
 use Roave\BackwardCompatibility\DetectChanges\BCBreak\TraitBased\TraitBased;
-use Roave\BetterReflection\Reflection\ReflectionClass;
-use Roave\BetterReflection\Reflector\Exception\IdentifierNotFound;
-use Roave\BetterReflection\Reflector\Reflector;
+use PHPStan\BetterReflection\Reflection\ReflectionClass;
+use PHPStan\BetterReflection\Reflector\Exception\IdentifierNotFound;
+use PHPStan\BetterReflection\Reflector\Reflector;
 
 final class CompareClasses implements CompareApi
 {

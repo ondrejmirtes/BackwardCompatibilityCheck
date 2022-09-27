@@ -7,7 +7,7 @@ namespace Roave\BackwardCompatibility\DetectChanges\BCBreak\MethodBased;
 use Psl\Str;
 use Roave\BackwardCompatibility\Change;
 use Roave\BackwardCompatibility\Changes;
-use Roave\BetterReflection\Reflection\ReflectionMethod;
+use PHPStan\BetterReflection\Reflection\ReflectionMethod;
 
 /**
  * A method that changes from concrete to abstract forces all child class

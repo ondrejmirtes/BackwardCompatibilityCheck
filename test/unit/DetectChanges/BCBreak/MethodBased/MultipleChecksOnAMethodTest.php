@@ -9,7 +9,7 @@ use Roave\BackwardCompatibility\Change;
 use Roave\BackwardCompatibility\Changes;
 use Roave\BackwardCompatibility\DetectChanges\BCBreak\MethodBased\MethodBased;
 use Roave\BackwardCompatibility\DetectChanges\BCBreak\MethodBased\MultipleChecksOnAMethod;
-use Roave\BetterReflection\Reflection\ReflectionMethod;
+use PHPStan\BetterReflection\Reflection\ReflectionMethod;
 use RoaveTest\BackwardCompatibility\Assertion;
 
 /** @covers \Roave\BackwardCompatibility\DetectChanges\BCBreak\MethodBased\MultipleChecksOnAMethod */

@@ -7,10 +7,10 @@ namespace RoaveTest\BackwardCompatibility\DetectChanges\BCBreak\MethodBased;
 use PHPUnit\Framework\TestCase;
 use Roave\BackwardCompatibility\Change;
 use Roave\BackwardCompatibility\DetectChanges\BCBreak\MethodBased\MethodBecameFinal;
-use Roave\BetterReflection\BetterReflection;
-use Roave\BetterReflection\Reflection\ReflectionMethod;
-use Roave\BetterReflection\Reflector\DefaultReflector;
-use Roave\BetterReflection\SourceLocator\Type\StringSourceLocator;
+use PHPStan\BetterReflection\BetterReflection;
+use PHPStan\BetterReflection\Reflection\ReflectionMethod;
+use PHPStan\BetterReflection\Reflector\DefaultReflector;
+use PHPStan\BetterReflection\SourceLocator\Type\StringSourceLocator;
 
 use function array_combine;
 use function array_keys;

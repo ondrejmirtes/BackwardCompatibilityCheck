@@ -9,10 +9,10 @@ use Roave\BackwardCompatibility\Change;
 use Roave\BackwardCompatibility\Changes;
 use Roave\BackwardCompatibility\DetectChanges\BCBreak\ClassBased\PropertyChanged;
 use Roave\BackwardCompatibility\DetectChanges\BCBreak\PropertyBased\PropertyBased;
-use Roave\BetterReflection\BetterReflection;
-use Roave\BetterReflection\Reflection\ReflectionProperty;
-use Roave\BetterReflection\Reflector\DefaultReflector;
-use Roave\BetterReflection\SourceLocator\Type\StringSourceLocator;
+use PHPStan\BetterReflection\BetterReflection;
+use PHPStan\BetterReflection\Reflection\ReflectionProperty;
+use PHPStan\BetterReflection\Reflector\DefaultReflector;
+use PHPStan\BetterReflection\SourceLocator\Type\StringSourceLocator;
 use RoaveTest\BackwardCompatibility\Assertion;
 
 /** @covers \Roave\BackwardCompatibility\DetectChanges\BCBreak\ClassBased\PropertyChanged */

@@ -8,10 +8,10 @@ use PHPUnit\Framework\TestCase;
 use Psl\Type;
 use Roave\BackwardCompatibility\Change;
 use Roave\BackwardCompatibility\DetectChanges\BCBreak\ClassConstantBased\ClassConstantValueChanged;
-use Roave\BetterReflection\BetterReflection;
-use Roave\BetterReflection\Reflection\ReflectionClassConstant;
-use Roave\BetterReflection\Reflector\DefaultReflector;
-use Roave\BetterReflection\SourceLocator\Type\StringSourceLocator;
+use PHPStan\BetterReflection\BetterReflection;
+use PHPStan\BetterReflection\Reflection\ReflectionClassConstant;
+use PHPStan\BetterReflection\Reflector\DefaultReflector;
+use PHPStan\BetterReflection\SourceLocator\Type\StringSourceLocator;
 
 use function array_combine;
 use function array_keys;

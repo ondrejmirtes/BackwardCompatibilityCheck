@@ -9,9 +9,9 @@ use Roave\BackwardCompatibility\Change;
 use Roave\BackwardCompatibility\Changes;
 use Roave\BackwardCompatibility\DetectChanges\Variance\TypeIsCovariant;
 use Roave\BackwardCompatibility\Formatter\FunctionName;
-use Roave\BetterReflection\Reflection\ReflectionFunction;
-use Roave\BetterReflection\Reflection\ReflectionMethod;
-use Roave\BetterReflection\Reflection\ReflectionType;
+use PHPStan\BetterReflection\Reflection\ReflectionFunction;
+use PHPStan\BetterReflection\Reflection\ReflectionMethod;
+use PHPStan\BetterReflection\Reflection\ReflectionType;
 
 /**
  * When the return type of a function changes, the new return type must be covariant to the current type.

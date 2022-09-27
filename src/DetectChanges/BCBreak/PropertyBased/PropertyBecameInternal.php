@@ -9,7 +9,7 @@ use Roave\BackwardCompatibility\Change;
 use Roave\BackwardCompatibility\Changes;
 use Roave\BackwardCompatibility\Formatter\ReflectionPropertyName;
 use Roave\BackwardCompatibility\InternalHelper;
-use Roave\BetterReflection\Reflection\ReflectionProperty;
+use PHPStan\BetterReflection\Reflection\ReflectionProperty;
 
 /**
  * A property that is marked internal is no available to downstream consumers.

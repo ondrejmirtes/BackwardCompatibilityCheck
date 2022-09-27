@@ -7,7 +7,7 @@ namespace Roave\BackwardCompatibility\DetectChanges\BCBreak\InterfaceBased;
 use Psl\Str;
 use Roave\BackwardCompatibility\Change;
 use Roave\BackwardCompatibility\Changes;
-use Roave\BetterReflection\Reflection\ReflectionClass;
+use PHPStan\BetterReflection\Reflection\ReflectionClass;
 
 /**
  * An interface cannot become concrete without introducing an explicit BC break, since

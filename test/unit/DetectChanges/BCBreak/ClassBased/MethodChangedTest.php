@@ -9,10 +9,10 @@ use Roave\BackwardCompatibility\Change;
 use Roave\BackwardCompatibility\Changes;
 use Roave\BackwardCompatibility\DetectChanges\BCBreak\ClassBased\MethodChanged;
 use Roave\BackwardCompatibility\DetectChanges\BCBreak\MethodBased\MethodBased;
-use Roave\BetterReflection\BetterReflection;
-use Roave\BetterReflection\Reflection\ReflectionMethod;
-use Roave\BetterReflection\Reflector\DefaultReflector;
-use Roave\BetterReflection\SourceLocator\Type\StringSourceLocator;
+use PHPStan\BetterReflection\BetterReflection;
+use PHPStan\BetterReflection\Reflection\ReflectionMethod;
+use PHPStan\BetterReflection\Reflector\DefaultReflector;
+use PHPStan\BetterReflection\SourceLocator\Type\StringSourceLocator;
 use RoaveTest\BackwardCompatibility\Assertion;
 
 use function strtolower;

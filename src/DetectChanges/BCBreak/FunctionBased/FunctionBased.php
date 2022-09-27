@@ -5,8 +5,8 @@ declare(strict_types=1);
 namespace Roave\BackwardCompatibility\DetectChanges\BCBreak\FunctionBased;
 
 use Roave\BackwardCompatibility\Changes;
-use Roave\BetterReflection\Reflection\ReflectionFunction;
-use Roave\BetterReflection\Reflection\ReflectionMethod;
+use PHPStan\BetterReflection\Reflection\ReflectionFunction;
+use PHPStan\BetterReflection\Reflection\ReflectionMethod;
 
 interface FunctionBased
 {

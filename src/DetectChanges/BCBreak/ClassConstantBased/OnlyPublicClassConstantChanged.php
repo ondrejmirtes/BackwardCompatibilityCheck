@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Roave\BackwardCompatibility\DetectChanges\BCBreak\ClassConstantBased;
 
 use Roave\BackwardCompatibility\Changes;
-use Roave\BetterReflection\Reflection\ReflectionClassConstant;
+use PHPStan\BetterReflection\Reflection\ReflectionClassConstant;
 
 final class OnlyPublicClassConstantChanged implements ClassConstantBased
 {

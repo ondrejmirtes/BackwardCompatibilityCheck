@@ -5,13 +5,13 @@ declare(strict_types=1);
 namespace Roave\BackwardCompatibility\Factory;
 
 use Roave\BackwardCompatibility\LocateSources\LocateSources;
-use Roave\BetterReflection\Reflector\DefaultReflector;
-use Roave\BetterReflection\Reflector\Reflector;
-use Roave\BetterReflection\SourceLocator\Exception\InvalidDirectory;
-use Roave\BetterReflection\SourceLocator\Exception\InvalidFileInfo;
-use Roave\BetterReflection\SourceLocator\Type\AggregateSourceLocator;
-use Roave\BetterReflection\SourceLocator\Type\MemoizingSourceLocator;
-use Roave\BetterReflection\SourceLocator\Type\SourceLocator;
+use PHPStan\BetterReflection\Reflector\DefaultReflector;
+use PHPStan\BetterReflection\Reflector\Reflector;
+use PHPStan\BetterReflection\SourceLocator\Exception\InvalidDirectory;
+use PHPStan\BetterReflection\SourceLocator\Exception\InvalidFileInfo;
+use PHPStan\BetterReflection\SourceLocator\Type\AggregateSourceLocator;
+use PHPStan\BetterReflection\SourceLocator\Type\MemoizingSourceLocator;
+use PHPStan\BetterReflection\SourceLocator\Type\SourceLocator;
 
 final class ComposerInstallationReflectorFactory
 {

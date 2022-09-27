@@ -9,9 +9,9 @@ use Roave\BackwardCompatibility\Change;
 use Roave\BackwardCompatibility\Changes;
 use Roave\BackwardCompatibility\DetectChanges\BCBreak\TraitBased\ExcludeInternalTrait;
 use Roave\BackwardCompatibility\DetectChanges\BCBreak\TraitBased\TraitBased;
-use Roave\BetterReflection\BetterReflection;
-use Roave\BetterReflection\Reflector\DefaultReflector;
-use Roave\BetterReflection\SourceLocator\Type\StringSourceLocator;
+use PHPStan\BetterReflection\BetterReflection;
+use PHPStan\BetterReflection\Reflector\DefaultReflector;
+use PHPStan\BetterReflection\SourceLocator\Type\StringSourceLocator;
 
 /** @covers \Roave\BackwardCompatibility\DetectChanges\BCBreak\TraitBased\ExcludeInternalTrait */
 final class ExcludeInternalTraitTest extends TestCase

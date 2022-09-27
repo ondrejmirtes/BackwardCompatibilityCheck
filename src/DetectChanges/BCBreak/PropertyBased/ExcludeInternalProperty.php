@@ -6,7 +6,7 @@ namespace Roave\BackwardCompatibility\DetectChanges\BCBreak\PropertyBased;
 
 use Roave\BackwardCompatibility\Changes;
 use Roave\BackwardCompatibility\InternalHelper;
-use Roave\BetterReflection\Reflection\ReflectionProperty;
+use PHPStan\BetterReflection\Reflection\ReflectionProperty;
 
 final class ExcludeInternalProperty implements PropertyBased
 {

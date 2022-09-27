@@ -7,10 +7,10 @@ namespace RoaveTest\BackwardCompatibility\DetectChanges\BCBreak\ClassBased;
 use PHPUnit\Framework\TestCase;
 use Roave\BackwardCompatibility\Change;
 use Roave\BackwardCompatibility\DetectChanges\BCBreak\ClassBased\ConstantRemoved;
-use Roave\BetterReflection\BetterReflection;
-use Roave\BetterReflection\Reflection\ReflectionClass;
-use Roave\BetterReflection\Reflector\DefaultReflector;
-use Roave\BetterReflection\SourceLocator\Type\SingleFileSourceLocator;
+use PHPStan\BetterReflection\BetterReflection;
+use PHPStan\BetterReflection\Reflection\ReflectionClass;
+use PHPStan\BetterReflection\Reflector\DefaultReflector;
+use PHPStan\BetterReflection\SourceLocator\Type\SingleFileSourceLocator;
 
 use function array_map;
 use function iterator_to_array;

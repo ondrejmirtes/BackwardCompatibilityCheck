@@ -7,7 +7,7 @@ namespace Roave\BackwardCompatibility\DetectChanges\BCBreak\ClassBased;
 use Psl\Str;
 use Roave\BackwardCompatibility\Change;
 use Roave\BackwardCompatibility\Changes;
-use Roave\BetterReflection\Reflection\ReflectionClass;
+use PHPStan\BetterReflection\Reflection\ReflectionClass;
 
 /**
  * A class cannot become abstract without introducing an explicit BC break, since

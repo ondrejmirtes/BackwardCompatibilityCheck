@@ -7,8 +7,8 @@ namespace Roave\BackwardCompatibility\DetectChanges\BCBreak\FunctionBased;
 use Roave\BackwardCompatibility\Change;
 use Roave\BackwardCompatibility\Changes;
 use Roave\BackwardCompatibility\Formatter\SymbolStartColumn;
-use Roave\BetterReflection\Reflection\ReflectionFunction;
-use Roave\BetterReflection\Reflection\ReflectionMethod;
+use PHPStan\BetterReflection\Reflection\ReflectionFunction;
+use PHPStan\BetterReflection\Reflection\ReflectionMethod;
 
 final class MultipleChecksOnAFunction implements FunctionBased
 {

@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Roave\BackwardCompatibility\SourceLocator;
 
-use Roave\BetterReflection\SourceLocator\Located\LocatedSource;
+use PHPStan\BetterReflection\SourceLocator\Located\LocatedSource;
 
 use function str_starts_with;
 use function strlen;

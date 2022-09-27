@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "acd6e92aeb8b12f8dc448fb3b5d41172",
+    "content-hash": "5ad857141ab464c99666256f4299c869",
     "packages": [
         {
             "name": "azjezz/psl",
@@ -770,16 +770,16 @@
         },
         {
             "name": "jetbrains/phpstorm-stubs",
-            "version": "v2022.2",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/JetBrains/phpstorm-stubs.git",
-                "reference": "01006d9854679672fc8b85c6d5063ea6f25226ac"
+                "reference": "2da8020b23f8a2f3e4683b3e1e703fee093c9da5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/JetBrains/phpstorm-stubs/zipball/01006d9854679672fc8b85c6d5063ea6f25226ac",
-                "reference": "01006d9854679672fc8b85c6d5063ea6f25226ac",
+                "url": "https://api.github.com/repos/JetBrains/phpstorm-stubs/zipball/2da8020b23f8a2f3e4683b3e1e703fee093c9da5",
+                "reference": "2da8020b23f8a2f3e4683b3e1e703fee093c9da5",
                 "shasum": ""
             },
             "require-dev": {
@@ -789,6 +789,7 @@
                 "phpdocumentor/reflection-docblock": "@stable",
                 "phpunit/phpunit": "@stable"
             },
+            "default-branch": true,
             "type": "library",
             "autoload": {
                 "files": [
@@ -812,9 +813,9 @@
                 "type"
             ],
             "support": {
-                "source": "https://github.com/JetBrains/phpstorm-stubs/tree/v2022.2"
+                "source": "https://github.com/JetBrains/phpstorm-stubs/tree/master"
             },
-            "time": "2022-07-25T13:18:36+00:00"
+            "time": "2022-09-27T11:46:02+00:00"
         },
         {
             "name": "justinrainbow/json-schema",
@@ -1066,6 +1067,77 @@
             "time": "2022-03-05T18:04:57+00:00"
         },
         {
+            "name": "ondrejmirtes/better-reflection",
+            "version": "5.8.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ondrejmirtes/BetterReflection.git",
+                "reference": "8855194c3a64fdfaa801666d9d2dd68a0a876b67"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ondrejmirtes/BetterReflection/zipball/8855194c3a64fdfaa801666d9d2dd68a0a876b67",
+                "reference": "8855194c3a64fdfaa801666d9d2dd68a0a876b67",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "jetbrains/phpstorm-stubs": "dev-master#9717ec39b211f2cef82a59c29c9eef0954647fac",
+                "nikic/php-parser": "^4.14.0",
+                "php": "^7.2 || ^8.0"
+            },
+            "conflict": {
+                "thecodingmachine/safe": "<1.1.3"
+            },
+            "require-dev": {
+                "doctrine/coding-standard": "^9.0.0",
+                "phpstan/phpstan": "^1.8.2",
+                "phpstan/phpstan-phpunit": "^1.1.1",
+                "phpunit/phpunit": "^9.5.23",
+                "rector/rector": "0.12.19"
+            },
+            "suggest": {
+                "composer/composer": "Required to use the ComposerSourceLocator"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "PHPStan\\BetterReflection\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "James Titcumb",
+                    "email": "james@asgrim.com",
+                    "homepage": "https://github.com/asgrim"
+                },
+                {
+                    "name": "Marco Pivetta",
+                    "email": "ocramius@gmail.com",
+                    "homepage": "https://ocramius.github.io/"
+                },
+                {
+                    "name": "Gary Hockin",
+                    "email": "gary@roave.com",
+                    "homepage": "https://github.com/geeh"
+                },
+                {
+                    "name": "Jaroslav Hanslík",
+                    "email": "kukulich@kukulich.cz",
+                    "homepage": "https://github.com/kukulich"
+                }
+            ],
+            "description": "Better Reflection - an improved code reflection API",
+            "support": {
+                "source": "https://github.com/ondrejmirtes/BetterReflection/tree/5.8.0.1"
+            },
+            "time": "2022-08-25T07:27:31+00:00"
+        },
+        {
             "name": "psr/container",
             "version": "2.0.2",
             "source": {
@@ -1243,120 +1315,6 @@
                 }
             ],
             "time": "2022-02-11T10:27:51+00:00"
-        },
-        {
-            "name": "roave/better-reflection",
-            "version": "5.11.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/Roave/BetterReflection.git",
-                "reference": "3e9820ae14694b280861ad4afc2c796353d34281"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/Roave/BetterReflection/zipball/3e9820ae14694b280861ad4afc2c796353d34281",
-                "reference": "3e9820ae14694b280861ad4afc2c796353d34281",
-                "shasum": ""
-            },
-            "require": {
-                "ext-json": "*",
-                "jetbrains/phpstorm-stubs": "2022.2",
-                "nikic/php-parser": "^4.15.1",
-                "php": "~8.0.12 || ~8.1.0 || ~8.2.0",
-                "roave/signature": "^1.6"
-            },
-            "conflict": {
-                "thecodingmachine/safe": "<1.1.3"
-            },
-            "require-dev": {
-                "doctrine/coding-standard": "^10.0.0",
-                "phpstan/phpstan": "^1.8.5",
-                "phpstan/phpstan-phpunit": "^1.1.1",
-                "phpunit/phpunit": "^9.5.24",
-                "roave/infection-static-analysis-plugin": "^1.23.0",
-                "vimeo/psalm": "^4.27"
-            },
-            "suggest": {
-                "composer/composer": "Required to use the ComposerSourceLocator"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Roave\\BetterReflection\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "James Titcumb",
-                    "email": "james@asgrim.com",
-                    "homepage": "https://github.com/asgrim"
-                },
-                {
-                    "name": "Marco Pivetta",
-                    "email": "ocramius@gmail.com",
-                    "homepage": "https://ocramius.github.io/"
-                },
-                {
-                    "name": "Gary Hockin",
-                    "email": "gary@roave.com",
-                    "homepage": "https://github.com/geeh"
-                },
-                {
-                    "name": "Jaroslav Hanslík",
-                    "email": "kukulich@kukulich.cz",
-                    "homepage": "https://github.com/kukulich"
-                }
-            ],
-            "description": "Better Reflection - an improved code reflection API",
-            "support": {
-                "issues": "https://github.com/Roave/BetterReflection/issues",
-                "source": "https://github.com/Roave/BetterReflection/tree/5.11.0"
-            },
-            "time": "2022-09-13T09:05:12+00:00"
-        },
-        {
-            "name": "roave/signature",
-            "version": "1.6.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/Roave/Signature.git",
-                "reference": "ed898589a3088217e6aa4f4a77d7b2b8f5e91a8a"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/Roave/Signature/zipball/ed898589a3088217e6aa4f4a77d7b2b8f5e91a8a",
-                "reference": "ed898589a3088217e6aa4f4a77d7b2b8f5e91a8a",
-                "shasum": ""
-            },
-            "require": {
-                "php": "7.4.*|8.0.*|8.1.*|8.2.*"
-            },
-            "require-dev": {
-                "doctrine/coding-standard": "^10.0.0",
-                "infection/infection": "^0.26.6",
-                "phpunit/phpunit": "^9.5.9",
-                "vimeo/psalm": "^4.27.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Roave\\Signature\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "description": "Sign and verify stuff",
-            "support": {
-                "issues": "https://github.com/Roave/Signature/issues",
-                "source": "https://github.com/Roave/Signature/tree/1.6.0"
-            },
-            "time": "2022-09-06T11:01:18+00:00"
         },
         {
             "name": "seld/jsonlint",

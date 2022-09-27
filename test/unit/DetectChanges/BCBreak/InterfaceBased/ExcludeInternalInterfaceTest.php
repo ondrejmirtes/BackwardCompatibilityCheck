@@ -9,9 +9,9 @@ use Roave\BackwardCompatibility\Change;
 use Roave\BackwardCompatibility\Changes;
 use Roave\BackwardCompatibility\DetectChanges\BCBreak\InterfaceBased\ExcludeInternalInterface;
 use Roave\BackwardCompatibility\DetectChanges\BCBreak\InterfaceBased\InterfaceBased;
-use Roave\BetterReflection\BetterReflection;
-use Roave\BetterReflection\Reflector\DefaultReflector;
-use Roave\BetterReflection\SourceLocator\Type\StringSourceLocator;
+use PHPStan\BetterReflection\BetterReflection;
+use PHPStan\BetterReflection\Reflector\DefaultReflector;
+use PHPStan\BetterReflection\SourceLocator\Type\StringSourceLocator;
 
 /** @covers \Roave\BackwardCompatibility\DetectChanges\BCBreak\InterfaceBased\ExcludeInternalInterface */
 final class ExcludeInternalInterfaceTest extends TestCase

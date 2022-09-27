@@ -22,7 +22,7 @@ use Roave\BackwardCompatibility\Git\PerformCheckoutOfRevision;
 use Roave\BackwardCompatibility\Git\PickVersionFromVersionCollection;
 use Roave\BackwardCompatibility\Git\Revision;
 use Roave\BackwardCompatibility\LocateDependencies\LocateDependencies;
-use Roave\BetterReflection\SourceLocator\Type\AggregateSourceLocator;
+use PHPStan\BetterReflection\SourceLocator\Type\AggregateSourceLocator;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Exception\InvalidArgumentException;
 use Symfony\Component\Console\Exception\LogicException;

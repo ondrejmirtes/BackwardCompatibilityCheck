@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Roave\BackwardCompatibility;
 
-use Roave\BetterReflection\Reflector\Reflector;
+use PHPStan\BetterReflection\Reflector\Reflector;
 
 interface CompareApi
 {

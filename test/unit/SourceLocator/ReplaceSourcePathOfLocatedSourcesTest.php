@@ -9,12 +9,12 @@ use ReflectionClass;
 use ReflectionMethod;
 use Roave\BackwardCompatibility\SourceLocator\LocatedSourceWithStrippedSourcesDirectory;
 use Roave\BackwardCompatibility\SourceLocator\ReplaceSourcePathOfLocatedSources;
-use Roave\BetterReflection\Identifier\Identifier;
-use Roave\BetterReflection\Identifier\IdentifierType;
-use Roave\BetterReflection\Reflection\Reflection;
-use Roave\BetterReflection\Reflector\Reflector;
-use Roave\BetterReflection\SourceLocator\Ast\Locator;
-use Roave\BetterReflection\SourceLocator\Located\LocatedSource;
+use PHPStan\BetterReflection\Identifier\Identifier;
+use PHPStan\BetterReflection\Identifier\IdentifierType;
+use PHPStan\BetterReflection\Reflection\Reflection;
+use PHPStan\BetterReflection\Reflector\Reflector;
+use PHPStan\BetterReflection\SourceLocator\Ast\Locator;
+use PHPStan\BetterReflection\SourceLocator\Located\LocatedSource;
 
 use function array_combine;
 use function array_filter;

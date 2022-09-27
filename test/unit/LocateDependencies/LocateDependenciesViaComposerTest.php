@@ -13,11 +13,11 @@ use Psl\Filesystem;
 use Psl\Type;
 use ReflectionProperty;
 use Roave\BackwardCompatibility\LocateDependencies\LocateDependenciesViaComposer;
-use Roave\BetterReflection\BetterReflection;
-use Roave\BetterReflection\Reflector\DefaultReflector;
-use Roave\BetterReflection\SourceLocator\Type\AggregateSourceLocator;
-use Roave\BetterReflection\SourceLocator\Type\PhpInternalSourceLocator;
-use Roave\BetterReflection\SourceLocator\Type\SourceLocator;
+use PHPStan\BetterReflection\BetterReflection;
+use PHPStan\BetterReflection\Reflector\DefaultReflector;
+use PHPStan\BetterReflection\SourceLocator\Type\AggregateSourceLocator;
+use PHPStan\BetterReflection\SourceLocator\Type\PhpInternalSourceLocator;
+use PHPStan\BetterReflection\SourceLocator\Type\SourceLocator;
 
 /** @covers \Roave\BackwardCompatibility\LocateDependencies\LocateDependenciesViaComposer */
 final class LocateDependenciesViaComposerTest extends TestCase

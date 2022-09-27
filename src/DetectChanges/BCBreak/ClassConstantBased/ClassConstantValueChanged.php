@@ -7,7 +7,7 @@ namespace Roave\BackwardCompatibility\DetectChanges\BCBreak\ClassConstantBased;
 use Psl\Str;
 use Roave\BackwardCompatibility\Change;
 use Roave\BackwardCompatibility\Changes;
-use Roave\BetterReflection\Reflection\ReflectionClassConstant;
+use PHPStan\BetterReflection\Reflection\ReflectionClassConstant;
 
 use function var_export;
 

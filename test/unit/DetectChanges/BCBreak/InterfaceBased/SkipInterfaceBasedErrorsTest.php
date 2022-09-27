@@ -11,7 +11,7 @@ use Roave\BackwardCompatibility\Change;
 use Roave\BackwardCompatibility\Changes;
 use Roave\BackwardCompatibility\DetectChanges\BCBreak\InterfaceBased\InterfaceBased;
 use Roave\BackwardCompatibility\DetectChanges\BCBreak\InterfaceBased\SkipInterfaceBasedErrors;
-use Roave\BetterReflection\Reflection\ReflectionClass;
+use PHPStan\BetterReflection\Reflection\ReflectionClass;
 
 use function uniqid;
 

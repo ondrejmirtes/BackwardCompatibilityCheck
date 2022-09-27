@@ -6,7 +6,7 @@ namespace Roave\BackwardCompatibility\DetectChanges\BCBreak\MethodBased;
 
 use Roave\BackwardCompatibility\Changes;
 use Roave\BackwardCompatibility\DetectChanges\BCBreak\FunctionBased\FunctionBased;
-use Roave\BetterReflection\Reflection\ReflectionMethod;
+use PHPStan\BetterReflection\Reflection\ReflectionMethod;
 
 /**
  * Performs a function BC compliance check on a method

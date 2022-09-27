@@ -9,8 +9,8 @@ use Psl\Str;
 use Psl\Vec;
 use Roave\BackwardCompatibility\Change;
 use Roave\BackwardCompatibility\Changes;
-use Roave\BetterReflection\Reflection\ReflectionClass;
-use Roave\BetterReflection\Reflection\ReflectionClassConstant;
+use PHPStan\BetterReflection\Reflection\ReflectionClass;
+use PHPStan\BetterReflection\Reflection\ReflectionClassConstant;
 
 final class ConstantRemoved implements ClassBased
 {

@@ -7,7 +7,7 @@ namespace Roave\BackwardCompatibility\DetectChanges\BCBreak\ClassConstantBased;
 use Roave\BackwardCompatibility\Change;
 use Roave\BackwardCompatibility\Changes;
 use Roave\BackwardCompatibility\Formatter\SymbolStartColumn;
-use Roave\BetterReflection\Reflection\ReflectionClassConstant;
+use PHPStan\BetterReflection\Reflection\ReflectionClassConstant;
 
 final class MultipleChecksOnAClassConstant implements ClassConstantBased
 {

@@ -7,7 +7,7 @@ namespace Roave\BackwardCompatibility\DetectChanges\BCBreak\ClassBased;
 use Psl\Regex;
 use Roave\BackwardCompatibility\Changes;
 use Roave\BackwardCompatibility\InternalHelper;
-use Roave\BetterReflection\Reflection\ReflectionClass;
+use PHPStan\BetterReflection\Reflection\ReflectionClass;
 
 /**
  * Classes marked "internal" (docblock) are not affected by BC checks.

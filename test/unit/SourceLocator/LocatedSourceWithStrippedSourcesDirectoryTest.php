@@ -8,7 +8,7 @@ use PHPUnit\Framework\TestCase;
 use ReflectionClass;
 use ReflectionMethod;
 use Roave\BackwardCompatibility\SourceLocator\LocatedSourceWithStrippedSourcesDirectory;
-use Roave\BetterReflection\SourceLocator\Located\LocatedSource;
+use PHPStan\BetterReflection\SourceLocator\Located\LocatedSource;
 
 use function array_combine;
 use function array_filter;

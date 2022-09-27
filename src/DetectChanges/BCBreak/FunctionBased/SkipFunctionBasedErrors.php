@@ -6,8 +6,8 @@ namespace Roave\BackwardCompatibility\DetectChanges\BCBreak\FunctionBased;
 
 use Roave\BackwardCompatibility\Change;
 use Roave\BackwardCompatibility\Changes;
-use Roave\BetterReflection\Reflection\ReflectionFunction;
-use Roave\BetterReflection\Reflection\ReflectionMethod;
+use PHPStan\BetterReflection\Reflection\ReflectionFunction;
+use PHPStan\BetterReflection\Reflection\ReflectionMethod;
 use Throwable;
 
 final class SkipFunctionBasedErrors implements FunctionBased

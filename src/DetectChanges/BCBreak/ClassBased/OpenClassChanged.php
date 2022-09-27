@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Roave\BackwardCompatibility\DetectChanges\BCBreak\ClassBased;
 
 use Roave\BackwardCompatibility\Changes;
-use Roave\BetterReflection\Reflection\ReflectionClass;
+use PHPStan\BetterReflection\Reflection\ReflectionClass;
 
 final class OpenClassChanged implements ClassBased
 {

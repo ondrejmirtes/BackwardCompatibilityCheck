@@ -9,6 +9,7 @@ use Composer\Factory;
 use Composer\Installer;
 use Composer\IO\ConsoleIO;
 use PackageVersions\Versions;
+use PHPStan\BetterReflection\BetterReflection;
 use Psl\Type;
 use Roave\BackwardCompatibility\Command;
 use Roave\BackwardCompatibility\CompareClasses;

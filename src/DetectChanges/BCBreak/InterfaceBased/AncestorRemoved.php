@@ -10,7 +10,7 @@ use Psl\Str;
 use Psl\Vec;
 use Roave\BackwardCompatibility\Change;
 use Roave\BackwardCompatibility\Changes;
-use Roave\BetterReflection\Reflection\ReflectionClass;
+use PHPStan\BetterReflection\Reflection\ReflectionClass;
 
 /**
  * An interface ancestor cannot be removed, as that breaks type checking in consumers.

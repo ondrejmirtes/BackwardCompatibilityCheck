@@ -10,7 +10,7 @@ use Roave\BackwardCompatibility\Changes;
 use Roave\BackwardCompatibility\DetectChanges\Variance\TypeIsContravariant;
 use Roave\BackwardCompatibility\DetectChanges\Variance\TypeIsCovariant;
 use Roave\BackwardCompatibility\Formatter\ReflectionPropertyName;
-use Roave\BetterReflection\Reflection\ReflectionProperty;
+use PHPStan\BetterReflection\Reflection\ReflectionProperty;
 
 /**
  * Type declarations for properties are invariant: you can't restrict the type because the consumer may

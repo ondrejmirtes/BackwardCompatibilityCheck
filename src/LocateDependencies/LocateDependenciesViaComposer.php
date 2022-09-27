@@ -10,12 +10,12 @@ use Psl;
 use Psl\Env;
 use Psl\Filesystem;
 use Roave\BackwardCompatibility\SourceLocator\ReplaceSourcePathOfLocatedSources;
-use Roave\BetterReflection\SourceLocator\Ast\Locator;
-use Roave\BetterReflection\SourceLocator\SourceStubber\ReflectionSourceStubber;
-use Roave\BetterReflection\SourceLocator\Type\AggregateSourceLocator;
-use Roave\BetterReflection\SourceLocator\Type\Composer\Factory\MakeLocatorForInstalledJson;
-use Roave\BetterReflection\SourceLocator\Type\PhpInternalSourceLocator;
-use Roave\BetterReflection\SourceLocator\Type\SourceLocator;
+use PHPStan\BetterReflection\SourceLocator\Ast\Locator;
+use PHPStan\BetterReflection\SourceLocator\SourceStubber\ReflectionSourceStubber;
+use PHPStan\BetterReflection\SourceLocator\Type\AggregateSourceLocator;
+use PHPStan\BetterReflection\SourceLocator\Type\Composer\Factory\MakeLocatorForInstalledJson;
+use PHPStan\BetterReflection\SourceLocator\Type\PhpInternalSourceLocator;
+use PHPStan\BetterReflection\SourceLocator\Type\SourceLocator;
 
 final class LocateDependenciesViaComposer implements LocateDependencies
 {

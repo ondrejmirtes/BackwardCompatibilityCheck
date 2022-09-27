@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Roave\BackwardCompatibility\DetectChanges\BCBreak\PropertyBased;
 
 use Roave\BackwardCompatibility\Changes;
-use Roave\BetterReflection\Reflection\ReflectionProperty;
+use PHPStan\BetterReflection\Reflection\ReflectionProperty;
 
 final class AccessiblePropertyChanged implements PropertyBased
 {
