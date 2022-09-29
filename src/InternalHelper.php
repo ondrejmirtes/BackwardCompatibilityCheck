@@ -15,6 +15,9 @@ class InternalHelper
     public static function isClassInternal(ReflectionClass $class): bool
     {
         $docComment = $class->getDocComment();
+		if ($docComment === null) {
+			return true;
+		}
         if (strpos($docComment, '@api') !== false) {
             return false;
         }
@@ -32,6 +35,9 @@ class InternalHelper
     public static function isMethodInternal(ReflectionMethod $method): bool
     {
         $docComment = $method->getDocComment();
+		if ($docComment === null) {
+			return true;
+		}
         if (strpos($docComment, '@api') !== false) {
             return false;
         }
@@ -49,6 +55,9 @@ class InternalHelper
     public static function isPropertyInternal(ReflectionProperty $property): bool
     {
         $docComment = $property->getDocComment();
+		if ($docComment === null) {
+			return true;
+		}
         if (strpos($docComment, '@api') !== false) {
             return false;
         }
@@ -62,6 +71,9 @@ class InternalHelper
     public static function isTraitInternal(ReflectionClass $trait): bool
     {
         $docComment = $trait->getDocComment();
+		if ($docComment === null) {
+			return true;
+		}
 
         return strpos($docComment, '@api') === false;
     }
@@ -69,6 +81,9 @@ class InternalHelper
     public static function isInterfaceInternal(ReflectionClass $interface): bool
     {
         $docComment = $interface->getDocComment();
+		if ($docComment === null) {
+			return true;
+		}
 
         return strpos($docComment, '@api') === false;
     }
