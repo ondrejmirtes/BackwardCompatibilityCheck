@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5ad857141ab464c99666256f4299c869",
+    "content-hash": "02a449e980b6645ddd97242bad490d00",
     "packages": [
         {
             "name": "azjezz/psl",
@@ -1068,37 +1068,38 @@
         },
         {
             "name": "ondrejmirtes/better-reflection",
-            "version": "5.8.0.1",
+            "version": "6.0.x-dev",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ondrejmirtes/BetterReflection.git",
-                "reference": "8855194c3a64fdfaa801666d9d2dd68a0a876b67"
+                "reference": "ecd9f6b23d7b12535ad4d646bcacf9cc998360c5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ondrejmirtes/BetterReflection/zipball/8855194c3a64fdfaa801666d9d2dd68a0a876b67",
-                "reference": "8855194c3a64fdfaa801666d9d2dd68a0a876b67",
+                "url": "https://api.github.com/repos/ondrejmirtes/BetterReflection/zipball/ecd9f6b23d7b12535ad4d646bcacf9cc998360c5",
+                "reference": "ecd9f6b23d7b12535ad4d646bcacf9cc998360c5",
                 "shasum": ""
             },
             "require": {
                 "ext-json": "*",
                 "jetbrains/phpstorm-stubs": "dev-master#9717ec39b211f2cef82a59c29c9eef0954647fac",
-                "nikic/php-parser": "^4.14.0",
+                "nikic/php-parser": "^4.15.1",
                 "php": "^7.2 || ^8.0"
             },
             "conflict": {
                 "thecodingmachine/safe": "<1.1.3"
             },
             "require-dev": {
-                "doctrine/coding-standard": "^9.0.0",
-                "phpstan/phpstan": "^1.8.2",
+                "doctrine/coding-standard": "^10.0.0",
+                "phpstan/phpstan": "^1.8.6",
                 "phpstan/phpstan-phpunit": "^1.1.1",
-                "phpunit/phpunit": "^9.5.23",
-                "rector/rector": "0.12.19"
+                "phpunit/phpunit": "^9.5.25",
+                "rector/rector": "0.14.3"
             },
             "suggest": {
                 "composer/composer": "Required to use the ComposerSourceLocator"
             },
+            "default-branch": true,
             "type": "library",
             "autoload": {
                 "psr-4": {
@@ -1133,9 +1134,9 @@
             ],
             "description": "Better Reflection - an improved code reflection API",
             "support": {
-                "source": "https://github.com/ondrejmirtes/BetterReflection/tree/5.8.0.1"
+                "source": "https://github.com/ondrejmirtes/BetterReflection/tree/6.0.x"
             },
-            "time": "2022-08-25T07:27:31+00:00"
+            "time": "2022-09-28T15:04:57+00:00"
         },
         {
             "name": "psr/container",
@@ -3950,12 +3951,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Roave/SecurityAdvisories.git",
-                "reference": "50a6bc0d820c35aab4d7818208f5ec815dff1fe1"
+                "reference": "d95ffb9a830a93858ba078d3f84964b713a47aae"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/50a6bc0d820c35aab4d7818208f5ec815dff1fe1",
-                "reference": "50a6bc0d820c35aab4d7818208f5ec815dff1fe1",
+                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/d95ffb9a830a93858ba078d3f84964b713a47aae",
+                "reference": "d95ffb9a830a93858ba078d3f84964b713a47aae",
                 "shasum": ""
             },
             "conflict": {
@@ -4361,7 +4362,7 @@
                 "topthink/thinkphp": "<=3.2.3",
                 "tribalsystems/zenario": "<9.2.55826",
                 "truckersmp/phpwhois": "<=4.3.1",
-                "twig/twig": "<1.38|>=2,<2.14.11|>=3,<3.3.8",
+                "twig/twig": "<1.44.7|>=2,<2.15.3|>=3,<3.4.3",
                 "typo3/cms": ">=6.2,<6.2.30|>=7,<7.6.32|>=8,<8.7.38|>=9,<9.5.29|>=10,<10.4.32|>=11,<11.5.16",
                 "typo3/cms-backend": ">=7,<=7.6.50|>=8,<=8.7.39|>=9,<=9.5.24|>=10,<=10.4.13|>=11,<=11.1",
                 "typo3/cms-core": ">=6.2,<=6.2.56|>=7,<7.6.58|>=8,<8.7.48|>=9,<9.5.37|>=10,<10.4.32|>=11,<11.5.16",
@@ -4465,7 +4466,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-09-23T21:04:15+00:00"
+            "time": "2022-09-28T10:04:48+00:00"
         },
         {
             "name": "sebastian/cli-parser",
