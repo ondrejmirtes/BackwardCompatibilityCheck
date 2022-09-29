@@ -24,6 +24,9 @@ class InternalHelper
 
         foreach ($class->getImmediateMethods() as $method) {
             $methodDocComment = $method->getDocComment();
+			if ($methodDocComment === null) {
+				continue;
+			}
             if (strpos($methodDocComment, '@api') !== false) {
                 return false;
             }
@@ -48,6 +51,9 @@ class InternalHelper
 
         $declaringClass  = $method->getImplementingClass();
         $classDocComment = $declaringClass->getDocComment();
+		if ($classDocComment === null) {
+			return true;
+		}
 
         return strpos($classDocComment, '@api') === false;
     }
@@ -64,6 +70,9 @@ class InternalHelper
 
         $declaringClass  = $property->getImplementingClass();
         $classDocComment = $declaringClass->getDocComment();
+		if ($classDocComment === null) {
+			return true;
+		}
 
         return strpos($classDocComment, '@api') === false;
     }
