@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "02a449e980b6645ddd97242bad490d00",
+    "content-hash": "b1f61d8914b44fdd51fa8d343037a914",
     "packages": [
         {
             "name": "azjezz/psl",
@@ -774,12 +774,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/JetBrains/phpstorm-stubs.git",
-                "reference": "2da8020b23f8a2f3e4683b3e1e703fee093c9da5"
+                "reference": "2abb19e65e4503975b9da5619c8a98c2ef30751b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/JetBrains/phpstorm-stubs/zipball/2da8020b23f8a2f3e4683b3e1e703fee093c9da5",
-                "reference": "2da8020b23f8a2f3e4683b3e1e703fee093c9da5",
+                "url": "https://api.github.com/repos/JetBrains/phpstorm-stubs/zipball/2abb19e65e4503975b9da5619c8a98c2ef30751b",
+                "reference": "2abb19e65e4503975b9da5619c8a98c2ef30751b",
                 "shasum": ""
             },
             "require-dev": {
@@ -815,7 +815,7 @@
             "support": {
                 "source": "https://github.com/JetBrains/phpstorm-stubs/tree/master"
             },
-            "time": "2022-09-27T11:46:02+00:00"
+            "time": "2022-10-04T10:16:46+00:00"
         },
         {
             "name": "justinrainbow/json-schema",
@@ -1068,16 +1068,16 @@
         },
         {
             "name": "ondrejmirtes/better-reflection",
-            "version": "6.0.x-dev",
+            "version": "6.1.x-dev",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ondrejmirtes/BetterReflection.git",
-                "reference": "ecd9f6b23d7b12535ad4d646bcacf9cc998360c5"
+                "reference": "ceba8a6f7b2feeb4d1d4caa8f8c146af777c6df6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ondrejmirtes/BetterReflection/zipball/ecd9f6b23d7b12535ad4d646bcacf9cc998360c5",
-                "reference": "ecd9f6b23d7b12535ad4d646bcacf9cc998360c5",
+                "url": "https://api.github.com/repos/ondrejmirtes/BetterReflection/zipball/ceba8a6f7b2feeb4d1d4caa8f8c146af777c6df6",
+                "reference": "ceba8a6f7b2feeb4d1d4caa8f8c146af777c6df6",
                 "shasum": ""
             },
             "require": {
@@ -1134,9 +1134,9 @@
             ],
             "description": "Better Reflection - an improved code reflection API",
             "support": {
-                "source": "https://github.com/ondrejmirtes/BetterReflection/tree/6.0.x"
+                "source": "https://github.com/ondrejmirtes/BetterReflection/tree/6.1.x"
             },
-            "time": "2022-09-28T15:04:57+00:00"
+            "time": "2022-10-04T09:31:46+00:00"
         },
         {
             "name": "psr/container",
@@ -5819,6 +5819,7 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
+        "ondrejmirtes/better-reflection": 20,
         "roave/security-advisories": 20
     },
     "prefer-stable": true,
