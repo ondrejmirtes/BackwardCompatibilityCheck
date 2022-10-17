@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "02a449e980b6645ddd97242bad490d00",
+    "content-hash": "6adaca830f4c7871459f5227ef47f142",
     "packages": [
         {
             "name": "azjezz/psl",
@@ -774,12 +774,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/JetBrains/phpstorm-stubs.git",
-                "reference": "2da8020b23f8a2f3e4683b3e1e703fee093c9da5"
+                "reference": "878dd7f909c2b3c1d8db908d6925c9b4e0aaa003"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/JetBrains/phpstorm-stubs/zipball/2da8020b23f8a2f3e4683b3e1e703fee093c9da5",
-                "reference": "2da8020b23f8a2f3e4683b3e1e703fee093c9da5",
+                "url": "https://api.github.com/repos/JetBrains/phpstorm-stubs/zipball/878dd7f909c2b3c1d8db908d6925c9b4e0aaa003",
+                "reference": "878dd7f909c2b3c1d8db908d6925c9b4e0aaa003",
                 "shasum": ""
             },
             "require-dev": {
@@ -815,7 +815,7 @@
             "support": {
                 "source": "https://github.com/JetBrains/phpstorm-stubs/tree/master"
             },
-            "time": "2022-09-27T11:46:02+00:00"
+            "time": "2022-10-14T09:43:20+00:00"
         },
         {
             "name": "justinrainbow/json-schema",
@@ -1068,16 +1068,16 @@
         },
         {
             "name": "ondrejmirtes/better-reflection",
-            "version": "6.0.x-dev",
+            "version": "6.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ondrejmirtes/BetterReflection.git",
-                "reference": "ecd9f6b23d7b12535ad4d646bcacf9cc998360c5"
+                "reference": "afe870deee721fa850b0ae44c920028c2876f898"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ondrejmirtes/BetterReflection/zipball/ecd9f6b23d7b12535ad4d646bcacf9cc998360c5",
-                "reference": "ecd9f6b23d7b12535ad4d646bcacf9cc998360c5",
+                "url": "https://api.github.com/repos/ondrejmirtes/BetterReflection/zipball/afe870deee721fa850b0ae44c920028c2876f898",
+                "reference": "afe870deee721fa850b0ae44c920028c2876f898",
                 "shasum": ""
             },
             "require": {
@@ -1091,15 +1091,15 @@
             },
             "require-dev": {
                 "doctrine/coding-standard": "^10.0.0",
-                "phpstan/phpstan": "^1.8.6",
+                "phpstan/phpstan": "^1.8.9",
                 "phpstan/phpstan-phpunit": "^1.1.1",
                 "phpunit/phpunit": "^9.5.25",
-                "rector/rector": "0.14.3"
+                "rector/rector": "0.14.3",
+                "vimeo/psalm": "^4.29"
             },
             "suggest": {
                 "composer/composer": "Required to use the ComposerSourceLocator"
             },
-            "default-branch": true,
             "type": "library",
             "autoload": {
                 "psr-4": {
@@ -1134,9 +1134,9 @@
             ],
             "description": "Better Reflection - an improved code reflection API",
             "support": {
-                "source": "https://github.com/ondrejmirtes/BetterReflection/tree/6.0.x"
+                "source": "https://github.com/ondrejmirtes/BetterReflection/tree/6.3.0"
             },
-            "time": "2022-09-28T15:04:57+00:00"
+            "time": "2022-10-17T08:31:20+00:00"
         },
         {
             "name": "psr/container",
