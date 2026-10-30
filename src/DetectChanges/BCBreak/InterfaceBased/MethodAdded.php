@@ -12,10 +12,16 @@ use Roave\BackwardCompatibility\Changes;
 use Roave\BetterReflection\Reflection\ReflectionClass;
 use Roave\BetterReflection\Reflection\ReflectionMethod;
 
+use function str_contains;
+
 final class MethodAdded implements InterfaceBased
 {
     public function __invoke(ReflectionClass $fromInterface, ReflectionClass $toInterface): Changes
     {
+        if ($this->isNotImplementable($fromInterface)) {
+            return Changes::empty();
+        }
+
         $fromMethods = $this->methods($fromInterface);
         $toMethods   = $this->methods($toInterface);
         $newMethods  = Dict\diff_by_key($toMethods, $fromMethods);
@@ -35,6 +41,21 @@ final class MethodAdded implements InterfaceBased
                 ),
             );
         }));
+    }
+
+    /**
+     * Interfaces marked with `@api-do-not-implement`, and interfaces extending them,
+     * are not meant to be implemented outside the library, so adding methods to them is fine.
+     */
+    private function isNotImplementable(ReflectionClass $interface): bool
+    {
+        foreach ([$interface, ...$interface->getInterfaces()] as $checkedInterface) {
+            if (str_contains($checkedInterface->getDocComment() ?? '', '@api-do-not-implement')) {
+                return true;
+            }
+        }
+
+        return false;
     }
 
     /** @return ReflectionMethod[] indexed by lowercase method name */

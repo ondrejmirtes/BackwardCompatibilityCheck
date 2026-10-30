@@ -66,6 +66,15 @@ interface F {
     public function a() {}
     public function c() {}
 }
+/** @api */
+interface G {}
+/**
+ * @api
+ * @api-do-not-implement
+ */
+interface H {}
+interface I extends H {}
+interface J {}
 PHP
             ,
             $astLocator,
@@ -95,6 +104,24 @@ interface F {
     public function b() {}
     public function c() {}
 }
+/** @api */
+interface G {
+    function added() {}
+}
+/**
+ * @api
+ * @api-do-not-implement
+ */
+interface H {
+    function added() {}
+}
+interface I extends H {
+    function added2() {}
+}
+/** @api-do-not-implement */
+interface J {
+    function added() {}
+}
 PHP
             ,
             $astLocator,
@@ -114,6 +141,10 @@ PHP
                 '[BC] ADDED: Method ADDED3() was added to interface E',
             ],
             'F' => ['[BC] ADDED: Method b() was added to interface F'],
+            'G' => ['[BC] ADDED: Method added() was added to interface G'],
+            'H' => [],
+            'I' => [],
+            'J' => ['[BC] ADDED: Method added() was added to interface J'],
         ];
 
         return array_combine(
