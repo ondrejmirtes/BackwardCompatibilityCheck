@@ -20,7 +20,7 @@ final class MethodParameterAdded implements MethodBased
 {
     public function __invoke(ReflectionMethod $fromMethod, ReflectionMethod $toMethod): Changes
     {
-        if ($fromMethod->getDeclaringClass()->isFinal() || $fromMethod->isPrivate()) {
+        if ($fromMethod->getImplementingClass()->isFinal() || $fromMethod->isPrivate()) {
             return Changes::empty();
         }
 
@@ -51,7 +51,7 @@ final class MethodParameterAdded implements MethodBased
                         'Parameter %s was added to Method %s() of class %s',
                         $paramName,
                         $fromMethod->getName(),
-                        $fromMethod->getDeclaringClass()->getName(),
+                        $fromMethod->getImplementingClass()->getName(),
                     ),
                 ),
             ),

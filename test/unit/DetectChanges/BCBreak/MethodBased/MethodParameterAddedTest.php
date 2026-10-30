@@ -75,6 +75,51 @@ final class MethodParameterAddedTest extends TestCase
         self::assertEquals(Changes::empty(), ($this->methodCheck)($from, $to));
     }
 
+    /**
+     * @param non-empty-string $fromCode
+     * @param non-empty-string $toCode
+     * @param list<string>     $expectedMessages
+     */
+    #[DataProvider('methodsOfClassesToBeTested')]
+    public function testDiffsOfClasses(string $fromCode, string $toCode, string $className, array $expectedMessages): void
+    {
+        $astLocator = (new BetterReflection())->astLocator();
+        $fromMethod = (new DefaultReflector(new StringSourceLocator($fromCode, $astLocator)))
+            ->reflectClass($className)
+            ->getMethod('foo');
+        $toMethod   = (new DefaultReflector(new StringSourceLocator($toCode, $astLocator)))
+            ->reflectClass($className)
+            ->getMethod('foo');
+
+        self::assertNotNull($fromMethod);
+        self::assertNotNull($toMethod);
+        self::assertSame(
+            $expectedMessages,
+            array_map(static function (Change $change): string {
+                return $change->__toString();
+            }, iterator_to_array((new MethodParameterAdded())($fromMethod, $toMethod))),
+        );
+    }
+
+    /** @return array<string, array{non-empty-string, non-empty-string, string, list<string>}> */
+    public static function methodsOfClassesToBeTested(): array
+    {
+        return [
+            'method from a trait used by a final class' => [
+                '<?php trait T { public function foo() {} } final class C { use T; }',
+                '<?php trait T { public function foo(bool $strict = false) {} } final class C { use T; }',
+                'C',
+                [],
+            ],
+            'method from a trait used by an open class' => [
+                '<?php trait T { public function foo() {} } class C { use T; }',
+                '<?php trait T { public function foo(bool $strict = false) {} } class C { use T; }',
+                'C',
+                ['[BC] ADDED: Parameter strict was added to Method foo() of class C'],
+            ],
+        ];
+    }
+
     /** @param string[] $expectedMessages */
     #[DataProvider('methodsToBeTested')]
     public function testDiffs(
