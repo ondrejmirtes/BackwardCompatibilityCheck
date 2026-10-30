@@ -67,7 +67,7 @@ class AnotherClassWithMultipleInterfaces implements AnInterface, AnotherInterfac
 class AClass {}
 class BClass extends AClass {}
 class CClass extends BClass {}
-final class OwnerPropertyContainer { private $owner; }
+final class OwnerPropertyContainer extends BClass implements AnInterface { private $owner; }
 PHP
             ,
             (new BetterReflection())->astLocator(),
@@ -487,6 +487,31 @@ PHP
                     new IntersectionType([new Identifier('A'), new Identifier('C')]),
                     new IntersectionType([new Identifier('B'), new Identifier('D')]),
                 ]),
+                false,
+            ],
+            'self is covariant to an interface the class implements' => [
+                new Identifier('AnInterface'),
+                new Identifier('self'),
+                true,
+            ],
+            'self is covariant to a parent class' => [
+                new Identifier('AClass'),
+                new Identifier('self'),
+                true,
+            ],
+            'self is covariant to the class it refers to' => [
+                new Identifier('OwnerPropertyContainer'),
+                new Identifier('self'),
+                true,
+            ],
+            'the class is covariant to self referring to it' => [
+                new Identifier('self'),
+                new Identifier('OwnerPropertyContainer'),
+                true,
+            ],
+            'a parent class is not covariant to self' => [
+                new Identifier('self'),
+                new Identifier('AClass'),
                 false,
             ],
         ];

@@ -67,7 +67,7 @@ class AnotherClassWithMultipleInterfaces implements AnInterface, AnotherInterfac
 class AClass {}
 class BClass extends AClass {}
 class CClass extends BClass {}
-final class OwnerPropertyContainer { private $owner; }
+final class OwnerPropertyContainer extends BClass implements AnInterface { private $owner; }
 PHP
             ,
             (new BetterReflection())->astLocator(),
@@ -452,6 +452,21 @@ PHP
                     new IntersectionType([new Identifier('A'), new Identifier('C')]),
                     new IntersectionType([new Identifier('B'), new Identifier('D')]),
                 ]),
+                false,
+            ],
+            'an interface the class implements is contravariant to self' => [
+                new Identifier('self'),
+                new Identifier('AnInterface'),
+                true,
+            ],
+            'the class is contravariant to self referring to it' => [
+                new Identifier('self'),
+                new Identifier('OwnerPropertyContainer'),
+                true,
+            ],
+            'self is not contravariant to an interface the class implements' => [
+                new Identifier('AnInterface'),
+                new Identifier('self'),
                 false,
             ],
         ];

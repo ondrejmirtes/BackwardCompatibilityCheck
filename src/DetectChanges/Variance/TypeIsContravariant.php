@@ -84,7 +84,7 @@ final class TypeIsContravariant
             return true;
         }
 
-        if ($comparedTypeAsString === 'object' && ! $type->isBuiltin()) {
+        if ($comparedTypeAsString === 'object' && ! self::isBuiltin($type)) {
             // `object` is always contravariant to any object type
             return true;
         }
@@ -93,7 +93,7 @@ final class TypeIsContravariant
             return true;
         }
 
-        if ($comparedTypeAsString === 'iterable' && ! $type->isBuiltin()) {
+        if ($comparedTypeAsString === 'iterable' && ! self::isBuiltin($type)) {
             // `Traversable`, and any of its implementations, can be widened to `iterable`
             $typeReflectionClass = $type->getClass();
 
@@ -101,11 +101,11 @@ final class TypeIsContravariant
                 || $typeReflectionClass->implementsInterface(Traversable::class);
         }
 
-        if ($type->isBuiltin() !== $comparedType->isBuiltin()) {
+        if (self::isBuiltin($type) !== self::isBuiltin($comparedType)) {
             return false;
         }
 
-        if ($type->isBuiltin()) {
+        if (self::isBuiltin($type)) {
             // All other type declarations have no variance/contravariance relationship
             return false;
         }
@@ -113,10 +113,22 @@ final class TypeIsContravariant
         $typeReflectionClass = $type->getClass();
         $comparedTypeClass   = $comparedType->getClass();
 
+        if (Str\lowercase($typeReflectionClass->getName()) === Str\lowercase($comparedTypeClass->getName())) {
+            // `self` and the name of the class it refers to are the same type
+            return true;
+        }
+
         if ($comparedTypeClass->isInterface()) {
             return $typeReflectionClass->implementsInterface($comparedTypeClass->getName());
         }
 
         return Iter\contains($typeReflectionClass->getParentClassNames(), $comparedTypeClass->getName());
+    }
+
+    /** `self`, `static` and `parent` are reported as built-in, but they refer to classes. */
+    private static function isBuiltin(ReflectionNamedType $type): bool
+    {
+        return $type->isBuiltin()
+            && ! Iter\contains(['self', 'static', 'parent'], Str\lowercase($type->getName()));
     }
 }
