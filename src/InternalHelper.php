@@ -63,6 +63,15 @@ final class InternalHelper
         return ! self::isApi($constant->getDeclaringClass()->getDocComment());
     }
 
+    /**
+     * Classes that are API only because some of their members are `@api` can be used,
+     * but not extended, so checks protecting subclasses do not apply to them.
+     */
+    public static function isClassOpenForExtension(ReflectionClass $class): bool
+    {
+        return ! $class->isFinal() && self::isApi($class->getDocComment());
+    }
+
     public static function isTraitInternal(ReflectionClass $trait): bool
     {
         return ! self::isApi($trait->getDocComment());

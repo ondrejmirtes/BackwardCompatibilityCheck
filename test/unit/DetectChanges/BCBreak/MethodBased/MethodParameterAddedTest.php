@@ -112,10 +112,16 @@ final class MethodParameterAddedTest extends TestCase
                 [],
             ],
             'method from a trait used by an open class' => [
-                '<?php trait T { public function foo() {} } class C { use T; }',
-                '<?php trait T { public function foo(bool $strict = false) {} } class C { use T; }',
+                '<?php trait T { public function foo() {} } /** @api */ class C { use T; }',
+                '<?php trait T { public function foo(bool $strict = false) {} } /** @api */ class C { use T; }',
                 'C',
                 ['[BC] ADDED: Parameter strict was added to Method foo() of class C'],
+            ],
+            '@api method of an open class that is not @api itself' => [
+                '<?php class C { /** @api */ public function foo() {} }',
+                '<?php class C { /** @api */ public function foo(bool $strict = false) {} }',
+                'C',
+                [],
             ],
         ];
     }
@@ -146,6 +152,7 @@ final class MethodParameterAddedTest extends TestCase
             <<<'PHP'
 <?php
 
+/** @api */
 class TheClass {
     public function addedParameter() {}
     public function addedTwoParameters() {}
@@ -169,6 +176,7 @@ PHP
             <<<'PHP'
 <?php
 
+/** @api */
 class TheClass {
     public function addedParameter(array $options = []) {}
     public function addedTwoParameters(int $one, array $options = []) {}

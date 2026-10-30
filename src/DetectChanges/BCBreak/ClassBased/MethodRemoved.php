@@ -78,6 +78,6 @@ final class MethodRemoved implements ClassBased
             return true;
         }
 
-        return $method->isProtected() && ! $class->isFinal();
+        return $method->isProtected() && InternalHelper::isClassOpenForExtension($class);
     }
 }

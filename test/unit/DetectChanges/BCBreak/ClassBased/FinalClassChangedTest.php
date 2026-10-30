@@ -38,6 +38,10 @@ final class FinalClassChangedTest extends TestCase
         $this->finalClassChanged = new FinalClassChanged($this->check);
         $this->fromClass         = $this->createStub(ReflectionClass::class);
         $this->toClass           = $this->createStub(ReflectionClass::class);
+
+        $this->fromClass
+            ->method('getDocComment')
+            ->willReturn('/** @api */');
     }
 
     public function testWillCheckFinalClass(): void

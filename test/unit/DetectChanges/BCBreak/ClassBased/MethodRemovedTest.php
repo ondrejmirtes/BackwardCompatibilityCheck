@@ -56,10 +56,32 @@ final class MethodRemovedTest extends TestCase
                     __DIR__ . '/../../../../asset/api/new/ClassWithMethodsBeingRemoved.php',
                     $locator,
                 )))->reflectClass('RoaveTestAsset\\ClassWithMethodsBeingRemoved'),
-                [
-                    '[BC] REMOVED: Method RoaveTestAsset\ClassWithMethodsBeingRemoved#removedPublicMethod() was removed',
-                    '[BC] REMOVED: Method RoaveTestAsset\ClassWithMethodsBeingRemoved#removedProtectedMethod() was removed',
-                ],
+                ['[BC] REMOVED: Method RoaveTestAsset\ClassWithMethodsBeingRemoved#removedPublicMethod() was removed'],
+            ],
+            'class that is not @api, with protected method removed' => [
+                (new DefaultReflector(new StringSourceLocator(
+                    <<<'PHP'
+                    <?php
+                    class PartiallyApiClass {
+                        /** @api */
+                        public function foo(): void {}
+                        /** @api */
+                        protected function bar(): void {}
+                    }
+                    PHP,
+                    $locator,
+                )))->reflectClass('PartiallyApiClass'),
+                (new DefaultReflector(new StringSourceLocator(
+                    <<<'PHP'
+                    <?php
+                    class PartiallyApiClass {
+                        /** @api */
+                        public function foo(): void {}
+                    }
+                    PHP,
+                    $locator,
+                )))->reflectClass('PartiallyApiClass'),
+                [],
             ],
             'final class with protected changing to private' => [
                 (new DefaultReflector(new StringSourceLocator(

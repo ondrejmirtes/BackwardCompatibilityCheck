@@ -41,7 +41,7 @@ final class PropertyRemoved implements ClassBased
     /** @return array<string, ReflectionProperty> */
     private function accessibleProperties(ReflectionClass $class): array
     {
-        $classIsOpen = ! $class->isFinal();
+        $classIsOpen = InternalHelper::isClassOpenForExtension($class);
 
         return Dict\filter($class->getProperties(), static function (ReflectionProperty $property) use ($classIsOpen): bool {
             return ($property->isPublic()

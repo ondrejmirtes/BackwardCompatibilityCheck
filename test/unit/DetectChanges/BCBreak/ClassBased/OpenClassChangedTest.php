@@ -38,6 +38,14 @@ final class OpenClassChangedTest extends TestCase
         $this->openClassChanged = new OpenClassChanged($this->check);
         $this->fromClass        = $this->createStub(ReflectionClass::class);
         $this->toClass          = $this->createStub(ReflectionClass::class);
+
+        $this->fromClass
+            ->method('getDocComment')
+            ->willReturn('/** @api */');
+
+        $this->fromClass
+            ->method('getDocComment')
+            ->willReturn('/** @api */');
     }
 
     public function testWillCheckFinalClass(): void

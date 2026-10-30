@@ -9,6 +9,7 @@ use Psl\Str;
 use Psl\Vec;
 use Roave\BackwardCompatibility\Change;
 use Roave\BackwardCompatibility\Changes;
+use Roave\BackwardCompatibility\InternalHelper;
 use Roave\BetterReflection\Reflection\ReflectionMethod;
 use Roave\BetterReflection\Reflection\ReflectionParameter;
 
@@ -20,7 +21,7 @@ final class MethodParameterAdded implements MethodBased
 {
     public function __invoke(ReflectionMethod $fromMethod, ReflectionMethod $toMethod): Changes
     {
-        if ($fromMethod->getImplementingClass()->isFinal() || $fromMethod->isPrivate()) {
+        if (! InternalHelper::isClassOpenForExtension($fromMethod->getImplementingClass()) || $fromMethod->isPrivate()) {
             return Changes::empty();
         }
 

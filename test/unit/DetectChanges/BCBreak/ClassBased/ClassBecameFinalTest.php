@@ -48,9 +48,13 @@ final class ClassBecameFinalTest extends TestCase
             <<<'PHP'
 <?php
 
+/** @api */
 class A {}
+/** @api */
 final class B {}
+/** @api */
 class C {}
+/** @api */
 final class D {}
 PHP
             ,
@@ -60,9 +64,13 @@ PHP
             <<<'PHP'
 <?php
 
+/** @api */
 final class A {}
+/** @api */
 class B {}
+/** @api */
 class C {}
+/** @api */
 final class D {}
 PHP
             ,
