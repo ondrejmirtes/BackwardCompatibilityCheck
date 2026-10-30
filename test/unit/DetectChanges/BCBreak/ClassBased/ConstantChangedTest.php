@@ -27,6 +27,7 @@ final class ConstantChangedTest extends TestCase
             <<<'PHP'
 <?php
 
+/** @api */
 class TheClass {
     public const a = 'value';
     protected const b = 'value';
@@ -43,6 +44,7 @@ PHP
             <<<'PHP'
 <?php
 
+/** @api */
 class TheClass {
     protected const b = 'value';
     public const d = 'value';

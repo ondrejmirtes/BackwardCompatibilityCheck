@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace RoaveTestAsset;
 
+/** @api */
 class ClassWithConstantsBeingRemoved
 {
     public const removedPublicConstant              = 'value';

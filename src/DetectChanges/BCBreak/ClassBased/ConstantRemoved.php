@@ -9,6 +9,7 @@ use Psl\Str;
 use Psl\Vec;
 use Roave\BackwardCompatibility\Change;
 use Roave\BackwardCompatibility\Changes;
+use Roave\BackwardCompatibility\InternalHelper;
 use Roave\BetterReflection\Reflection\ReflectionClass;
 use Roave\BetterReflection\Reflection\ReflectionClassConstant;
 
@@ -34,8 +35,9 @@ final class ConstantRemoved implements ClassBased
         $classIsOpen = ! $class->isFinal();
 
         return Dict\filter($class->getConstants(), static function (ReflectionClassConstant $constant) use ($classIsOpen): bool {
-            return $constant->isPublic()
-                || ($classIsOpen && $constant->isProtected());
+            return ($constant->isPublic()
+                || ($classIsOpen && $constant->isProtected()))
+                && ! InternalHelper::isClassConstantInternal($constant);
         });
     }
 }

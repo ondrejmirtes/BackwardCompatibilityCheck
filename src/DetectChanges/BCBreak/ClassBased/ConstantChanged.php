@@ -9,6 +9,7 @@ use Psl\Vec;
 use Roave\BackwardCompatibility\Change;
 use Roave\BackwardCompatibility\Changes;
 use Roave\BackwardCompatibility\DetectChanges\BCBreak\ClassConstantBased\ClassConstantBased;
+use Roave\BackwardCompatibility\InternalHelper;
 use Roave\BetterReflection\Reflection\ReflectionClass;
 use Roave\BetterReflection\Reflection\ReflectionClassConstant;
 
@@ -35,6 +36,10 @@ final class ConstantChanged implements ClassBased
     private function checkSymbols(array $from, array $to): iterable
     {
         foreach (Vec\keys(Dict\intersect_by_key($from, $to)) as $name) {
+            if (InternalHelper::isClassConstantInternal($from[$name])) {
+                continue;
+            }
+
             yield from ($this->checkConstant)($from[$name], $to[$name]);
         }
     }

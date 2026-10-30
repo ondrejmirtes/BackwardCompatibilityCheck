@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Roave\BackwardCompatibility;
 
 use Roave\BetterReflection\Reflection\ReflectionClass;
+use Roave\BetterReflection\Reflection\ReflectionClassConstant;
 use Roave\BetterReflection\Reflection\ReflectionMethod;
 use Roave\BetterReflection\Reflection\ReflectionProperty;
 
@@ -51,6 +52,15 @@ final class InternalHelper
         }
 
         return ! self::isApi($property->getImplementingClass()->getDocComment());
+    }
+
+    public static function isClassConstantInternal(ReflectionClassConstant $constant): bool
+    {
+        if (self::isApi($constant->getDocComment())) {
+            return false;
+        }
+
+        return ! self::isApi($constant->getDeclaringClass()->getDocComment());
     }
 
     public static function isTraitInternal(ReflectionClass $trait): bool

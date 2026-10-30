@@ -90,6 +90,7 @@ final class ConstantRemovedTest extends TestCase
                 (new DefaultReflector(new StringSourceLocator(
                     <<<'PHP'
                     <?php
+                    /** @api */
                     final class FinalClassWithPublicConstant {
                         public const A = 'a';
                     }
@@ -99,6 +100,7 @@ final class ConstantRemovedTest extends TestCase
                 (new DefaultReflector(new StringSourceLocator(
                     <<<'PHP'
                     <?php
+                    /** @api */
                     final class FinalClassWithPublicConstant {
                         private const A = 'a';
                     }
@@ -106,6 +108,32 @@ final class ConstantRemovedTest extends TestCase
                     $locator,
                 )))->reflectClass('FinalClassWithPublicConstant'),
                 ['[BC] REMOVED: Constant FinalClassWithPublicConstant::A was removed'],
+            ],
+            'class without @api, with an @api method, removing constants' => [
+                (new DefaultReflector(new StringSourceLocator(
+                    <<<'PHP'
+                    <?php
+                    class PartiallyApiClass {
+                        public const INTERNAL = 'a';
+                        /** @api */
+                        public const API = 'b';
+                        /** @api */
+                        public function foo(): void {}
+                    }
+                    PHP,
+                    $locator,
+                )))->reflectClass('PartiallyApiClass'),
+                (new DefaultReflector(new StringSourceLocator(
+                    <<<'PHP'
+                    <?php
+                    class PartiallyApiClass {
+                        /** @api */
+                        public function foo(): void {}
+                    }
+                    PHP,
+                    $locator,
+                )))->reflectClass('PartiallyApiClass'),
+                ['[BC] REMOVED: Constant PartiallyApiClass::API was removed'],
             ],
             'enum with protected constant being removed' => [
                 (new StringReflectorFactory())(
